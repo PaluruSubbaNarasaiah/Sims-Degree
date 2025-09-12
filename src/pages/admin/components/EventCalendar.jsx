@@ -9,19 +9,19 @@ const events = [
     id: 1,
     title: "Project Submission Deadline",
     time: "10:00 AM - 11:00 AM",
-    description: "Final submission for the Science Fair project.",
+    description: "Final submission for the Science project.",
   },
   {
     id: 2,
-    title: "Parent-Teacher Meeting",
+    title: "Parent-Facuty Meeting",
     time: "02:00 PM - 05:00 PM",
     description: "Annual parent-teacher conference for grades 5-8.",
   },
   {
     id: 3,
-    title: "School Play Rehearsal",
+    title: "College Play Rehearsal",
     time: "03:30 PM - 06:00 PM",
-    description: "Dress rehearsal for the 'Annual Gala' play.",
+    description: "Dress rehearsal for the 'Annual Fest' play.",
   },
 ];
 
