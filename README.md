@@ -127,7 +127,7 @@ vercel --prod
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 👨‍💻 Author
+## 👨💻 Author
 
 **Paluru Subba Narasaiah**
 - GitHub: [@PaluruSubbaNarasaiah](https://github.com/PaluruSubbaNarasaiah)
