@@ -55,7 +55,7 @@ npm run dev
 npm run build
 
 ----
-🔑 Roles & Demo Credentials
+## 🔑 Roles & Demo Credentials
 Role	Username	Email	Password
 Superadmin	superadmin	superadmin@example.com	superadmin123
 Admin	admin	admin@example.com	admin123
@@ -63,7 +63,7 @@ Faculty	faculty	–	faculty123
 Student	student	–	student123
 Parent	parent	–	parent123
 ---
-📂 Project Structure
+## 📂 Project Structure
 bash
 Copy code
 degree-college-management/
@@ -76,7 +76,7 @@ degree-college-management/
 └── ...
 🔍 Features Overview
 ----
-🗓️ Attendance Module
+## 🗓️ Attendance Module
 Track attendance (Present/Absent/Half-day/Leave)
 
 Calendar view with color-coded indicators
@@ -85,7 +85,7 @@ Monthly attendance reports
 
 Reason tagging for absences
 ----
-👩‍🎓 Student Management
+## 👩‍🎓 Student Management
 Manage multiple courses and semesters
 
 Unique roll numbers & enrollment management
@@ -94,10 +94,10 @@ Academic progress monitoring
 
 Profile photo upload support
 ---
-🎨 UI Preview
+## 🎨 UI Preview
 Dashboard	Attendance Module
 ----
-🤝 Contributing
+## 🤝 Contributing
 Contributions are welcome!
 To contribute:
 
@@ -111,13 +111,13 @@ Push to the branch: git push origin feature/your-feature
 
 Open a Pull Request 🚀
 ----
-📜 License
+## 📜 License
 This project is licensed under the MIT License.
 ----
 💡 Built with ❤️ using React, Vite, and TailwindCSS
 ----
 
-This is **ready for GitHub**:
+## This is **ready for GitHub**:
 - 📌 Professional badges  
 - 📌 Quick setup commands  
 - 📌 Clear **Roles Table** for easy testing  
