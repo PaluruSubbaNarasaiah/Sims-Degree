@@ -1,8 +1,8 @@
-import LecturerGradeChart from '../components/lecturerGradeChart';
-import LecturerAttendanceChart from '../components/lecturerAttendanceChart';
+import LecturerGradeChart from '../components/LecturerGradeChart';
+import LecturerAttendanceChart from '../components/LecturerAttendanceChart';
 import AssignmentsTable from '../components/AssignmentsTable';
 import AssignedClasses from '../components/AssignedClasses';
-function lecturerPage() {
+function LecturerPage() {
     return (
         <>
     <div className="px-0 sm:px-2 md:px-4 lg:p-6 flex flex-col gap-2 sm:gap-4 lg:gap-8">
@@ -29,4 +29,4 @@ function lecturerPage() {
     )
 }
 
-export default lecturerPage;
+export default LecturerPage;

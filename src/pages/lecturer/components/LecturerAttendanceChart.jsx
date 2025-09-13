@@ -24,14 +24,14 @@ const dataa = [
     }
   ];
 
-function lecturerAttendanceChart() {
+function LecturerAttendanceChart() {
     const currentMonth = new Date(new Date().getFullYear(), new Date().getMonth() - 1, 1).toLocaleString('default', { month: 'long' });
 
     return (
         <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-200 h-full flex flex-col">
             <div className="flex justify-between items-center mb-4">
                 <h2 className="text-xl font-bold text-gray-900 flex items-center gap-2">
-                    <TrendingUp size={24} className="text-green-600" /> lecturer Attendance
+                    <TrendingUp size={24} className="text-green-600" /> Lecturer Attendance
                 </h2>
                 <span className="text-lg font-semibold text-green-700 bg-green-50 px-3 py-1 rounded-full">95%</span>
             </div>
@@ -74,4 +74,4 @@ function lecturerAttendanceChart() {
     );
 }
 
-export default lecturerAttendanceChart;
+export default LecturerAttendanceChart;
