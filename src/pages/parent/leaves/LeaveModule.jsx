@@ -29,7 +29,7 @@ const mockLeaveRequests = [
         startDate: '2024-07-15',
         endDate: '2024-07-16',
         status: 'Pending',
-        teacherComment: '',
+        lecturerComment: '',
         requestedAt: '2024-07-14T10:00:00Z',
     },
     {
@@ -40,7 +40,7 @@ const mockLeaveRequests = [
         startDate: '2024-07-20',
         endDate: '2024-07-22',
         status: 'Approved',
-        teacherComment: 'Approved. Please ensure notes are collected.',
+        lecturerComment: 'Approved. Please ensure notes are collected.',
         requestedAt: '2024-07-13T15:30:00Z',
     },
 ];
@@ -125,7 +125,7 @@ const LeaveModule = () => {
                 startDate: newRequest.startDate,
                 endDate: finalEndDate,
                 status: 'Pending', // New requests always start as Pending
-                teacherComment: '',
+                lecturerComment: '',
                 requestedAt: new Date().toISOString(),
                 // attachment: newRequest.attachment ? newRequest.attachment.name : null, // Simulate attachment name
             });
@@ -325,7 +325,7 @@ const LeaveModule = () => {
                                         Duration
                                     </th>
                                     <th className="px-3 py-2 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider sm:px-6 sm:py-3">
-                                        Teacher's Comment
+                                        lecturer's Comment
                                     </th>
                                     <th className="px-3 py-2 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider sm:px-6 sm:py-3">
                                         Status
@@ -348,7 +348,7 @@ const LeaveModule = () => {
                                             {request.startDate} {request.endDate && request.startDate !== request.endDate ? `to ${request.endDate}` : ''}
                                         </td>
                                         <td className="px-3 py-2 text-xs text-gray-600 sm:px-6 sm:py-4 sm:text-sm max-w-xs overflow-hidden text-ellipsis">
-                                            {request.teacherComment || 'N/A'}
+                                            {request.lecturerComment || 'N/A'}
                                         </td>
                                         <td className="px-3 py-2 whitespace-nowrap sm:px-6 sm:py-4">
                                             <span className={`px-2 py-0.5 inline-flex text-xs leading-5 font-semibold rounded-full ${getStatusColorClass(request.status)}`}>

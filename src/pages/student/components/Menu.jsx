@@ -14,17 +14,17 @@ import {
 export const menuItems = [ // Export menuItems
   {
     items: [
-      { icon: FaSchool, label: "Home", href: "/student", visible: ["admin", "teacher", "student", "parent"], keywords: ["dashboard", "overview"] }, // Added keywords
-      { icon: FaJournalWhills, label: "Diary", href: "/student/diary", visible: ["admin", "teacher", "student", "parent"], keywords: ["daily journal", "notes", "activities"] }, // Added keywords
-      { icon: FaClipboardList, label: "Exam Reports", href: "/student/exams", visible: ["admin", "teacher", "student", "parent"], keywords: ["grades", "results", "tests", "scores"] }, // Added keywords
-      { icon: FaRegCalendarAlt, label: "Schedules", href: "/student/schedules", visible: ["admin", "teacher", "student", "parent"], keywords: ["timetable", "calendar", "class schedule"] }, // Added keywords
-      { icon: FaClipboardCheck, label: "Assignments", href: "/student/assignments", visible: ["admin", "teacher", "student", "parent"], keywords: ["homework", "tasks", "submissions"] }, // Added keywords
-      { icon: FaDesktop, label: "Library", href: "/student/library", visible: ["admin", "teacher", "student", "parent"], keywords: ["books", "resources", "e-books"] }, // Added keywords
-      { icon: FaUserCheck, label: "Attendance", href: "/student/attendance", visible: ["admin", "teacher", "student", "parent"], keywords: ["daily attendance", "record", "absent", "present"] }, // Added keywords
-      { icon: FaCalendarCheck, label: "Events", href: "/student/events", visible: ["admin", "teacher", "student", "parent"], keywords: ["school events", "calendar", "activities"] }, // Added keywords
-      { icon: FaComments, label: "Messages", href: "/student/messages", visible: ["admin", "teacher", "student", "parent"], keywords: ["inbox", "chats", "communication"] }, // Added keywords
-      { icon: FaBullhorn, label: "Announcements", href: "/student/announcements", visible: ["admin", "teacher", "student", "parent"], keywords: ["notifications", "notices", "updates"] }, // Added keywords
-      { icon: FaQuestionCircle, label: "Help", href: "/student/help", visible: ["admin", "teacher", "student", "parent"], keywords: ["support", "faq", "guide"] }, // Added keywords
+      { icon: FaSchool, label: "Home", href: "/student", visible: ["admin", "lecturer", "student", "parent"], keywords: ["dashboard", "overview"] }, // Added keywords
+      { icon: FaJournalWhills, label: "Diary", href: "/student/diary", visible: ["admin", "lecturer", "student", "parent"], keywords: ["daily journal", "notes", "activities"] }, // Added keywords
+      { icon: FaClipboardList, label: "Exam Reports", href: "/student/exams", visible: ["admin", "lecturer", "student", "parent"], keywords: ["grades", "results", "tests", "scores"] }, // Added keywords
+      { icon: FaRegCalendarAlt, label: "Schedules", href: "/student/schedules", visible: ["admin", "lecturer", "student", "parent"], keywords: ["timetable", "calendar", "class schedule"] }, // Added keywords
+      { icon: FaClipboardCheck, label: "Assignments", href: "/student/assignments", visible: ["admin", "lecturer", "student", "parent"], keywords: ["homework", "tasks", "submissions"] }, // Added keywords
+      { icon: FaDesktop, label: "Library", href: "/student/library", visible: ["admin", "lecturer", "student", "parent"], keywords: ["books", "resources", "e-books"] }, // Added keywords
+      { icon: FaUserCheck, label: "Attendance", href: "/student/attendance", visible: ["admin", "lecturer", "student", "parent"], keywords: ["daily attendance", "record", "absent", "present"] }, // Added keywords
+      { icon: FaCalendarCheck, label: "Events", href: "/student/events", visible: ["admin", "lecturer", "student", "parent"], keywords: ["school events", "calendar", "activities"] }, // Added keywords
+      { icon: FaComments, label: "Messages", href: "/student/messages", visible: ["admin", "lecturer", "student", "parent"], keywords: ["inbox", "chats", "communication"] }, // Added keywords
+      { icon: FaBullhorn, label: "Announcements", href: "/student/announcements", visible: ["admin", "lecturer", "student", "parent"], keywords: ["notifications", "notices", "updates"] }, // Added keywords
+      { icon: FaQuestionCircle, label: "Help", href: "/student/help", visible: ["admin", "lecturer", "student", "parent"], keywords: ["support", "faq", "guide"] }, // Added keywords
     ],
   },
 ];
@@ -99,7 +99,7 @@ const StudentMenu = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
                 {group.items.map((item) => {
                   // Assuming `role` from context provides the current user's role
                   // and `item.visible` array contains roles that can see this item.
-                  // This assumes `role` is a string like "teacher", "admin", etc.
+                  // This assumes `role` is a string like "lecturer", "admin", etc.
                   if (item.visible.includes(role)) {
                     const isRootPath = item.href === "/student";
                     const isActive = isRootPath

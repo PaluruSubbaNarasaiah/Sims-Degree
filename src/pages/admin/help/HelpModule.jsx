@@ -42,13 +42,13 @@ const HelpModule = () => {
       ]
     },
     {
-      id: 'faculty',
-      title: 'Faculty & Course Management',
+      id: 'lecturer',
+      title: 'lecturer & Course Management',
       questions: [
         {
           id: 'fac-1',
           question: 'How do I assign lecturers to courses?',
-          answer: 'Go to Faculty > Assign Courses. Select the lecturer from the dropdown, then check the programs/courses you want to assign. You can set them as a course coordinator for a specific program by selecting the checkbox.'
+          answer: 'Go to lecturer > Assign Courses. Select the lecturer from the dropdown, then check the programs/courses you want to assign. You can set them as a course coordinator for a specific program by selecting the checkbox.'
         }
       ]
     },

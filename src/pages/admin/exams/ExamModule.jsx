@@ -13,7 +13,7 @@ import {
 } from './ReportsData';
 
 const ExamModule = () => {
-  const [activeReportClass, setActiveReportClass] = useState('Year 1');
+  const [activeReportClass, setActiveReportClass] = useState('1st Year');
   const [showCompleteCollegeReport, setShowCompleteCollegeReport] = useState(false);
 
   const [exams, setExams] = useState([]);
@@ -38,11 +38,7 @@ const ExamModule = () => {
   }, [exams]);
 
   const allClasses = useMemo(() => {
-    const classes = [];
-    for (let i = 1; i <= 4; i++) {
-      classes.push(`Year ${i}`);
-    }
-    return classes;
+    return ['1st Year', '2nd Year'];
   }, []);
 
   const getClassReportData = useCallback((className) => {
@@ -251,11 +247,11 @@ const ExamModule = () => {
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 pb-4 border-b border-gray-200">
         <h1 className="text-3xl lg:text-4xl font-extrabold text-gray-900 leading-tight mb-4 md:mb-0 flex items-center gap-3">
           <LayoutList size={36} className="text-purple-600" />
-          College Examination Reports
+          Intermediate College Examination Reports
         </h1>
         <div className="flex flex-wrap gap-3">
           <button
-            onClick={() => { setActiveReportClass('Year 1'); setShowCompleteCollegeReport(false); }}
+            onClick={() => { setActiveReportClass('1st Year'); setShowCompleteCollegeReport(false); }}
             className={`px-5 py-2.5 rounded-lg font-semibold transition-colors duration-200 shadow-md flex items-center justify-center ${!showCompleteCollegeReport ? 'bg-indigo-600 text-white hover:bg-indigo-700 focus:outline-none focus:ring-4 focus:ring-indigo-500 focus:ring-opacity-50 transform hover:-translate-y-0.5' : 'bg-gray-200 text-gray-800 hover:bg-gray-300 focus:outline-none focus:ring-4 focus:ring-gray-300 focus:ring-opacity-50'}`}
           >
             <BarChart2 className="mr-2" size={20} /> Year Reports
@@ -295,12 +291,12 @@ const ExamModule = () => {
 
                   {currentClassReport.sectionSummary.length > 0 && (
                     <div className="mb-8">
-                      <h4 className="text-lg font-semibold text-gray-700 mb-4 border-b pb-2">Department Summary</h4>
+                      <h4 className="text-lg font-semibold text-gray-700 mb-4 border-b pb-2">Program Summary</h4>
                       <div className="overflow-x-auto rounded-lg border border-gray-200">
                         <table className="min-w-full divide-y divide-gray-200">
                           <thead className="bg-gray-50">
                             <tr>
-                              <th className="px-5 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Department</th>
+                              <th className="px-5 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Program</th>
                               <th className="px-5 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Students (Graded / Total)</th>
                               <th className="px-5 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Avg. Performance (%)</th>
                               <th className="px-5 py-3 text-left text-xs font-semibold text-green-600 uppercase tracking-wider"><TrendingUp size={16} className="inline-block mr-1" />Good</th>

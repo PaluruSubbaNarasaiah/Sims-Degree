@@ -27,8 +27,8 @@ const AnnouncementProvider = ({ children }) => {
     },
     {
       id: 'ann-002',
-      title: 'Faculty Development Program on AI in Education',
-      content: 'A Faculty Development Program (FDP) on "Integrating AI in Higher Education" is scheduled for all teaching staff. The session will be held in the main auditorium on September 20th. Registration is mandatory.',
+      title: 'lecturer Development Program on AI in Education',
+      content: 'A lecturer Development Program (FDP) on "Integrating AI in Higher Education" is scheduled for all teaching staff. The session will be held in the main auditorium on September 20th. Registration is mandatory.',
       target: ['lecturers', 'staff'],
       startDate: '2025-09-16',
       endDate: '2025-09-19',

@@ -162,7 +162,7 @@ const ForgotPasswordPage = ({ onBackToLogin, onClose }) => {
           {!otpSent && !otpVerified && (
             <div className="bg-red-50 border border-red-200 rounded-lg p-3 mb-4 w-full">
               <p className="text-red-600 text-sm text-center">
-                <strong>Note:</strong> Teachers/Students/Parents should contact school management.
+                <strong>Note:</strong> lecturers/Students/Parents should contact school management.
               </p>
             </div>
           )}

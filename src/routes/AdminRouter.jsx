@@ -9,7 +9,7 @@ import AdminPage from '../pages/admin/adminpage/AdminPage';
 import ProfileModule from '../pages/admin/profile/ProfileModule';
 import AdmissionModule from '../pages/admin/admissions/AdmissionModule';
 import StudentModule from '../pages/admin/students/StudentModule';
-import TeacherModule from '../pages/admin/teachers/TeacherModule';
+import LecturerModule from '../pages/admin/lecturer/LecturerModule';
 import ParentModule from '../pages/admin/parents/ParentModule';
 import FeeModule from '../pages/admin/fee/FeeModule';
 import BankModule from '../pages/admin/bankaccount/BankModule';
@@ -132,7 +132,7 @@ function AdminRouter() {
                     <Route path="/profile" element={<ProfileModule />} />
                     <Route path="/admissions" element={<AdmissionModule />} />
                     <Route path="/students" element={<StudentModule />} />
-                    <Route path="/faculty" element={<TeacherModule />} />
+                    <Route path="/faculty" element={<LecturerModule />} />
                     <Route path="/parents" element={<ParentModule />} />
                     <Route path="/fee" element={<FeeModule />} />
                     <Route path="/bank" element={<BankModule />} />

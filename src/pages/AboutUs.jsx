@@ -70,7 +70,7 @@ const AboutUs = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-700 leading-relaxed mb-6">
                     <div className="flex items-center">
                         <Feather size={20} className="mr-2 text-purple-600 flex-shrink-0" />
-                        <span>Efficient Student & Faculty Management</span>
+                        <span>Efficient Student & lecturer Management</span>
                     </div>
                     <div className="flex items-center">
                         <Feather size={20} className="mr-2 text-purple-600 flex-shrink-0" />
@@ -94,7 +94,7 @@ const AboutUs = () => {
                     </div>
                     <div className="flex items-center">
                         <Feather size={20} className="mr-2 text-purple-600 flex-shrink-0" />
-                        <span>Intuitive Faculty, Student, and Parent Portals</span>
+                        <span>Intuitive lecturer, Student, and Parent Portals</span>
                     </div>
                 </div>
 
@@ -125,7 +125,7 @@ const AboutUs = () => {
                 </div>
 
                 <p className="text-gray-700 leading-relaxed mt-6 text-lg">
-                    We are constantly evolving and improving SIMS based on feedback from faculty and college administrators. Our team is committed to providing excellent support and ensuring that our system adapts to the changing needs of the higher education landscape.
+                    We are constantly evolving and improving SIMS based on feedback from lecturer and college administrators. Our team is committed to providing excellent support and ensuring that our system adapts to the changing needs of the higher education landscape.
                 </p>
 
                 {/* Call to Action */}

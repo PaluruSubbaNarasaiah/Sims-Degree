@@ -1,7 +1,7 @@
 // SchedulesModule.jsx
 import React, { useState } from 'react';
 import RegularScheduleViewStudent from './RegularScheduleViewStudent';
-import ExamScheduleViewTeacher from '../../teacher/schedules/ExamScheduleViewTeacher';
+import ExamScheduleViewLecturer from '../../lecturer/schedules/ExamScheduleViewLecturer';
 import { CalendarDays } from 'lucide-react'; // Assuming you're using lucide-react for icons
 
 const SchedulesModule = () => {
@@ -11,17 +11,17 @@ const SchedulesModule = () => {
 
   const currentStudentClasses = ["Class 1", "Class 3", "Class 5"]; // Example: Student is enrolled in these classes
 
-  // In-memory state for ALL teachers' regular schedules.
+  // In-memory state for ALL lecturers' regular schedules.
   // The student view will filter this based on currentStudentClasses.
-  const [allTeachersRegularSchedules] = useState([
-    // Mock Data for demonstration from various teachers and classes
-    { id: 'trs1', teacherId: 'faculty_F123', dayOfWeek: 'Monday', startTime: '09:00', endTime: '09:45', subject: 'Mathematics', classId: 'Class 1' },
-    { id: 'trs2', teacherId: 'faculty_F123', dayOfWeek: 'Monday', startTime: '10:00', endTime: '10:45', subject: 'Science', classId: 'Class 2' },
-    { id: 'trs3', teacherId: 'faculty_F123', dayOfWeek: 'Tuesday', startTime: '11:00', endTime: '11:45', subject: 'English', classId: 'Class 1' },
-    { id: 'trs4', teacherId: 'faculty_F124', dayOfWeek: 'Wednesday', startTime: '09:00', endTime: '09:45', subject: 'Physics', classId: 'Class 10' },
-    { id: 'trs5', teacherId: 'faculty_F125', dayOfWeek: 'Monday', startTime: '08:00', endTime: '08:45', subject: 'History', classId: 'Class 3' },
-    { id: 'trs6', teacherId: 'faculty_F126', dayOfWeek: 'Thursday', startTime: '13:00', endTime: '13:45', subject: 'Chemistry', classId: 'Class 5' },
-    { id: 'trs7', teacherId: 'faculty_F123', dayOfWeek: 'Friday', startTime: '15:00', endTime: '15:45', subject: 'Art', classId: 'Class 1' },
+  const [alllecturersRegularSchedules] = useState([
+    // Mock Data for demonstration from various lecturers and classes
+    { id: 'trs1', lecturerId: 'lecturer_F123', dayOfWeek: 'Monday', startTime: '09:00', endTime: '09:45', subject: 'Mathematics', classId: 'Class 1' },
+    { id: 'trs2', lecturerId: 'lecturer_F123', dayOfWeek: 'Monday', startTime: '10:00', endTime: '10:45', subject: 'Science', classId: 'Class 2' },
+    { id: 'trs3', lecturerId: 'lecturer_F123', dayOfWeek: 'Tuesday', startTime: '11:00', endTime: '11:45', subject: 'English', classId: 'Class 1' },
+    { id: 'trs4', lecturerId: 'lecturer_F124', dayOfWeek: 'Wednesday', startTime: '09:00', endTime: '09:45', subject: 'Physics', classId: 'Class 10' },
+    { id: 'trs5', lecturerId: 'lecturer_F125', dayOfWeek: 'Monday', startTime: '08:00', endTime: '08:45', subject: 'History', classId: 'Class 3' },
+    { id: 'trs6', lecturerId: 'lecturer_F126', dayOfWeek: 'Thursday', startTime: '13:00', endTime: '13:45', subject: 'Chemistry', classId: 'Class 5' },
+    { id: 'trs7', lecturerId: 'lecturer_F123', dayOfWeek: 'Friday', startTime: '15:00', endTime: '15:45', subject: 'Art', classId: 'Class 1' },
   ]);
 
   // In-memory state for admin-provided exam schedules (read-only for students)
@@ -65,12 +65,12 @@ const SchedulesModule = () => {
       <div className="bg-white rounded-lg shadow p-6 min-h-[400px]">
         {activeTab === "Regular Schedule" && (
           <RegularScheduleViewStudent
-            allTeachersRegularSchedules={allTeachersRegularSchedules}
+            alllecturersRegularSchedules={alllecturersRegularSchedules}
             currentStudentClasses={currentStudentClasses} // Pass student's enrolled classes
           />
         )}
         {activeTab === "Exam Schedule" && (
-          <ExamScheduleViewTeacher // Reusing the teacher's read-only exam view
+          <ExamScheduleViewLecturer // Reusing the lecturer's read-only exam view
             adminExamSchedules={adminExamSchedules}
           />
         )}

@@ -164,7 +164,7 @@ const LandingPage = () => {
                   </div>
                   <h3 className="text-2xl font-bold mb-3 text-gray-900">Staff Portal</h3>
                   <p className="text-gray-700">
-                    Empower your faculty with grading tools, class management, and professional development tracking.
+                    Empower your lecturer with grading tools, class management, and professional development tracking.
                   </p>
                   <div className="mt-6">
                     <a href="#" className="inline-flex items-center text-blue-600 font-medium group-hover:text-blue-800 transition-colors">
@@ -325,7 +325,7 @@ const LandingPage = () => {
                   ))}
                 </div>
                 <p className="text-gray-700 mb-6 italic">
-                  "As a teacher, I save at least **2 hours per week** on administrative tasks. The gradebook interface is intuitive and the parent communication tools are fantastic."
+                  "As a lecturer, I save at least **2 hours per week** on administrative tasks. The gradebook interface is intuitive and the parent communication tools are fantastic."
                 </p>
                 <div className="flex items-center">
                   <div className="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center mr-4 text-purple-600 font-bold text-lg border border-purple-200">
@@ -333,7 +333,7 @@ const LandingPage = () => {
                   </div>
                   <div>
                     <h4 className="font-bold text-gray-900">Emily Rodriguez</h4>
-                    <p className="text-gray-600 text-sm">Teacher, Hillside College</p>
+                    <p className="text-gray-600 text-sm">lecturer, Hillside College</p>
                   </div>
                 </div>
               </div>

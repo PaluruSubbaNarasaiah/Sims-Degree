@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 // Define days of the week in order for consistent display
 const DaysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
-const RegularScheduleViewStudent = ({ allTeachersRegularSchedules, currentStudentClasses }) => {
+const RegularScheduleViewStudent = ({ alllecturersRegularSchedules, currentStudentClasses }) => {
   const [groupedSchedules, setGroupedSchedules] = useState({});
   const [loading, setLoading] = useState(true);
 
@@ -16,7 +16,7 @@ const RegularScheduleViewStudent = ({ allTeachersRegularSchedules, currentStuden
     });
 
     // Filter schedules to only include those for the classes the student is enrolled in
-    const studentFilteredSchedules = allTeachersRegularSchedules.filter(schedule =>
+    const studentFilteredSchedules = alllecturersRegularSchedules.filter(schedule =>
       currentStudentClasses.includes(schedule.classId)
     );
 
@@ -38,7 +38,7 @@ const RegularScheduleViewStudent = ({ allTeachersRegularSchedules, currentStuden
 
     setGroupedSchedules(grouped);
     setLoading(false);
-  }, [allTeachersRegularSchedules, currentStudentClasses]); // Re-run effect when these props change
+  }, [alllecturersRegularSchedules, currentStudentClasses]); // Re-run effect when these props change
 
   if (loading) {
     return (

@@ -4,7 +4,7 @@ import { X, Paperclip, Send, Save } from 'lucide-react';
 import { fetchUsers, fetchUserById } from './MessageData'; // Import our mock data functions
 
 // Removed the predefined recipientOptions array as per request.
-// Students will now only message individual faculty members or students.
+// Students will now only message individual lecturer members or students.
 
 // Helper function to debounce an API call
 const debounce = (func, delay) => {
@@ -82,7 +82,7 @@ function ComposeMessage({ onClose, onSend, onSaveDraft, replyTo }) {
         }));
       } else {
         // If not found by ID or type is not allowed for students
-        console.error(`Invalid User ID or unauthorized recipient type: "${newInputValue}". Students can only message Faculty and other Students.`);
+        console.error(`Invalid User ID or unauthorized recipient type: "${newInputValue}". Students can only message lecturer and other Students.`);
         // Remove the invalid option from the selected list
         setFormData(prev => ({
           ...prev,
@@ -152,7 +152,7 @@ function ComposeMessage({ onClose, onSend, onSaveDraft, replyTo }) {
               options={[]} // No predefined group options
               value={formData.recipients}
               onChange={handleRecipientsChange}
-              placeholder="Type individual Faculty or Student ID/name (e.g., F001, S101)..."
+              placeholder="Type individual lecturer or Student ID/name (e.g., F001, S101)..."
               className={`basic-select ${errors.recipients ? 'border-red-500' : ''}`}
               classNamePrefix="select"
               formatCreateLabel={(inputValue) => `Add individual: "${inputValue}"`}

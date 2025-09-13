@@ -131,11 +131,11 @@ const ProfileModule = () => {
                   </div>
                 </div>
 
-                {/* Class Faculty ID with Name - Read Only */}
+                {/* Class lecturer ID with Name - Read Only */}
                 <div>
-                  <label className="block text-sm mb-2">Class Faculty</label>
+                  <label className="block text-sm mb-2">Class lecturer</label>
                   <div className="flex items-center gap-3 bg-gray-50 px-4 py-2.5 border rounded-lg">
-                    <UserCheck size={18} /> <span>{profileData.classFacultyName} ({profileData.classFacultyId})</span>
+                    <UserCheck size={18} /> <span>{profileData.classlecturerName} ({profileData.classlecturerId})</span>
                   </div>
                 </div>
 

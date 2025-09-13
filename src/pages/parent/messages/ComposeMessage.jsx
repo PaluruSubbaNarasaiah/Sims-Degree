@@ -4,7 +4,7 @@ import { X, Paperclip, Send, Save } from 'lucide-react';
 import { fetchUsers, fetchUserById } from './MessageData'; // Import our mock data functions
 
 // No predefined recipient groups for a parent panel.
-// Parents will now only message individual faculty members.
+// Parents will now only message individual lecturer members.
 const recipientOptions = [];
 
 // Helper function to debounce an API call
@@ -83,7 +83,7 @@ function ComposeMessage({ onClose, onSend, onSaveDraft, replyTo }) {
         }));
       } else {
         // If not found by ID or type is not allowed for parents
-        console.error(`Invalid User ID or unauthorized recipient type: "${newInputValue}". Parents can only message Faculty members.`);
+        console.error(`Invalid User ID or unauthorized recipient type: "${newInputValue}". Parents can only message lecturer members.`);
         // Remove the invalid option from the selected list
         setFormData(prev => ({
           ...prev,
@@ -152,10 +152,10 @@ function ComposeMessage({ onClose, onSend, onSaveDraft, replyTo }) {
               options={recipientOptions} // Now empty, only individual options will be suggested
               value={formData.recipients}
               onChange={handleRecipientsChange}
-              placeholder="Type individual Faculty ID/name (e.g., F001, Dr. Smith)..."
+              placeholder="Type individual lecturer ID/name (e.g., F001, Dr. Smith)..."
               className={`basic-select ${errors.recipients ? 'border-red-500' : ''}`}
               classNamePrefix="select"
-              formatCreateLabel={(inputValue) => `Add Faculty: "${inputValue}"`}
+              formatCreateLabel={(inputValue) => `Add lecturer: "${inputValue}"`}
               loadOptions={loadIndividualRecipients}
               isValidNewOption={(inputValue, selectValue, selectOptions) => {
                 if (!inputValue) return false;

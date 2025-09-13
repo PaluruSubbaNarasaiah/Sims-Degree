@@ -301,7 +301,7 @@ const ResultsModule = () => {
                 value={filterSemester}
                 onChange={(e) => setFilterSemester(e.target.value)}
               >
-                <option value="">All Semesters</option>
+                <option value="">All Years</option>
                 {allSemesters.map(sem => (
                   <option key={sem} value={sem}>{sem}</option>
                 ))}
@@ -375,7 +375,7 @@ const ResultsModule = () => {
                   >
                     <div className="flex items-center">
                       <Hash size={12} className="mr-0.5" />
-                      <span>Sem</span>
+                      <span>Year</span>
                       {getSortIcon('semester')}
                     </div>
                   </th>

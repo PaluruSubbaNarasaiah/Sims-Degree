@@ -17,58 +17,58 @@ import {
 } from 'lucide-react';
 
 const ClassModule = () => {
-  // Sample data for degree college programs
+  // Sample data for intermediate college programs
   const initialProgramsData = [
     {
       id: 1,
-      programName: 'B.Sc. Computer Science',
+      programName: 'Pre-Engineering',
       semester: 1,
       strength: 45,
-      coordinator: 'Dr. Evelyn Reed',
+      coordinator: 'Mr. Ahmad Khan',
       lecturers: [
-        { name: 'Dr. Evelyn Reed', empId: 'L001', courses: ['Intro to Programming', 'Data Structures'] },
-        { name: 'Prof. Samuel Tan', empId: 'L005', courses: ['Discrete Mathematics'] }
+        { name: 'Mr. Ahmad Khan', empId: 'L001', courses: ['Mathematics', 'Physics'] },
+        { name: 'Ms. Sarah Ahmed', empId: 'L005', courses: ['Chemistry'] }
       ]
     },
     {
       id: 2,
-      programName: 'B.Sc. Computer Science',
+      programName: 'Pre-Engineering',
       semester: 2,
       strength: 42,
-      coordinator: 'Dr. Evelyn Reed',
+      coordinator: 'Mr. Ahmad Khan',
       lecturers: [
-        { name: 'Prof. Samuel Tan', empId: 'L005', courses: ['Algorithms', 'OOP'] },
-        { name: 'Dr. Anya Sharma', empId: 'L006', courses: ['Database Systems'] }
+        { name: 'Ms. Sarah Ahmed', empId: 'L005', courses: ['Mathematics', 'Physics'] },
+        { name: 'Mr. Hassan Ali', empId: 'L006', courses: ['Chemistry', 'Computer Science'] }
       ]
     },
     {
       id: 3,
-      programName: 'B.Com',
+      programName: 'Pre-Medical',
       semester: 1,
       strength: 60,
-      coordinator: 'Prof. Mark Chen',
+      coordinator: 'Dr. Fatima Sheikh',
       lecturers: [
-        { name: 'Prof. Mark Chen', empId: 'L002', courses: ['Financial Accounting'] }
+        { name: 'Dr. Fatima Sheikh', empId: 'L002', courses: ['Biology', 'Chemistry'] }
       ]
     },
     {
       id: 4,
-      programName: 'B.A. History',
-      semester: 3,
+      programName: 'Commerce',
+      semester: 1,
       strength: 35,
-      coordinator: 'Dr. Isabella Rossi',
+      coordinator: 'Mr. Tariq Mahmood',
       lecturers: [
-        { name: 'Dr. Isabella Rossi', empId: 'L003', courses: ['Modern History', 'Ancient Civilizations'] }
+        { name: 'Mr. Tariq Mahmood', empId: 'L003', courses: ['Accounting', 'Economics'] }
       ]
     },
     {
       id: 5,
-      programName: 'B.Com',
-      semester: 2,
+      programName: 'Arts',
+      semester: 1,
       strength: 58,
-      coordinator: 'Prof. Mark Chen',
+      coordinator: 'Ms. Ayesha Malik',
       lecturers: [
-        { name: 'Prof. Kenji Tanaka', empId: 'L004', courses: ['Microeconomics', 'Macroeconomics'] }
+        { name: 'Ms. Ayesha Malik', empId: 'L004', courses: ['History', 'Geography'] }
       ]
     },
   ];
@@ -275,7 +275,7 @@ const ClassModule = () => {
       <div className="flex items-center justify-between mb-8 pb-4 border-b border-gray-200">
         <div className="flex items-center">
           <School className="mr-4 text-indigo-600" size={36} />
-          <h1 className="text-3xl lg:text-4xl font-extrabold text-gray-900 leading-tight">Program Management</h1>
+          <h1 className="text-3xl lg:text-4xl font-extrabold text-gray-900 leading-tight">Class Management</h1>
         </div>
         <div className="flex gap-4">
           <div className="relative">
@@ -299,7 +299,7 @@ const ClassModule = () => {
               value={filterSection}
               onChange={(e) => setFilterSection(e.target.value)}
             >
-              <option value="All">All Semesters</option>
+              <option value="All">All Years</option>
               {semesters.map(sem => (
                 <option key={sem} value={sem}>{sem}</option>
               ))}
@@ -341,7 +341,7 @@ const ClassModule = () => {
           </div>
           <input
             type="text"
-            placeholder="Search programs, semesters, or coordinator names"
+            placeholder="Search programs, years, or coordinator names"
             className="pl-10 pr-4 py-2.5 w-full rounded-lg border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-gray-900 placeholder-gray-400 text-base transition-colors"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
@@ -352,7 +352,7 @@ const ClassModule = () => {
             onClick={() => { resetForm(); setIsAddEditModalOpen(true); }}
             className="flex items-center justify-center gap-2 px-6 py-2.5 bg-indigo-600 text-white font-medium rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-4 focus:ring-indigo-500 focus:ring-opacity-50 transition transform hover:-translate-y-0.5"
           >
-            <PlusCircle size={20} /> Add New Program
+            <PlusCircle size={20} /> Add New Class
           </button>
         </div>
       </div>
@@ -365,7 +365,7 @@ const ClassModule = () => {
                 Program
               </th>
               <th scope="col" className="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                Semester
+                Year
               </th>
               <th scope="col" className="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
                 Strength
@@ -389,7 +389,7 @@ const ClassModule = () => {
                     {programItem.programName}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
-                    {programItem.semester}
+                    {programItem.semester === 1 ? '1st Year' : '2nd Year'}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
                     <div className="flex items-center">
@@ -454,7 +454,7 @@ const ClassModule = () => {
           <div className="bg-white rounded-xl p-6 md:p-8 w-full max-w-lg md:max-w-xl shadow-2xl border border-gray-100 transition-all duration-300 ease-in-out transform scale-100 opacity-100">
             <div className="flex justify-between items-center mb-6 pb-4 border-b border-gray-200">
               <h2 className="text-2xl font-bold text-gray-900">
-                {editingProgramId ? 'Edit Program' : 'Add New Program'}
+                {editingProgramId ? 'Edit Class' : 'Add New Class'}
               </h2>
               <button
                 onClick={resetForm}
@@ -494,16 +494,16 @@ const ClassModule = () => {
                 )}
 
                 <div>
-                  <label htmlFor="semester" className="block text-sm font-medium text-gray-700 mb-1">Semester <span className="text-red-500">*</span></label>
+                  <label htmlFor="semester" className="block text-sm font-medium text-gray-700 mb-1">Year <span className="text-red-500">*</span></label>
                   <input
                     type="number"
                     id="semester"
                     className="w-full px-4 py-2.5 rounded-lg border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-gray-900 placeholder-gray-400 text-base transition-colors"
                     value={newProgram.semester}
                     onChange={(e) => setNewProgram({ ...newProgram, semester: e.target.value })}
-                    placeholder="e.g., 1, 2, 3"
+                    placeholder="e.g., 1, 2"
                     min="1"
-                    max="8"
+                    max="2"
                     required
                   />
                 </div>
@@ -591,7 +591,7 @@ const ClassModule = () => {
               </div>
               <div className="bg-green-50 p-5 rounded-lg shadow-sm border border-green-100">
                 <h3 className="font-semibold text-lg mb-3 text-gray-800 flex items-center">
-                  <BookText size={22} className="mr-2 text-green-600" /> Lecturers & Courses
+                  <BookText size={22} className="mr-2 text-green-600" /> Lecturers & Subjects
                 </h3>
                 <div className="space-y-4">
                   {selectedProgram.lecturers.length > 0 ? selectedProgram.lecturers.map((lecturer, index) => (
@@ -601,7 +601,7 @@ const ClassModule = () => {
                       </div>
                       <div className="flex-grow">
                         <p className="font-medium text-gray-900">{lecturer.name} ({lecturer.empId})</p>
-                        <p className="text-sm text-gray-600 mt-1">Courses: {lecturer.courses.join(', ')}</p>
+                        <p className="text-sm text-gray-600 mt-1">Subjects: {lecturer.courses.join(', ')}</p>
                       </div>
                     </div>
                   )) : (

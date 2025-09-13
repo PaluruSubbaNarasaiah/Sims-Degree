@@ -55,7 +55,7 @@ const HelpModule = () => {
         {
           id: 'cg-2',
           question: 'Where can I find course materials and lecture notes?',
-          answer: 'Within each course page, there should be a section like "Course Content" or "Materials" where faculty members upload lecture slides, readings, and other resources.'
+          answer: 'Within each course page, there should be a section like "Course Content" or "Materials" where lecturer members upload lecture slides, readings, and other resources.'
         },
         {
           id: 'cg-3',
@@ -76,12 +76,12 @@ const HelpModule = () => {
         {
           id: 'assign-2',
           question: 'Can I resubmit an assignment after the deadline?',
-          answer: 'Policies on late submissions and resubmissions vary by faculty member and course. Please check the assignment instructions or contact your faculty member directly to inquire about resubmission options.'
+          answer: 'Policies on late submissions and resubmissions vary by lecturer member and course. Please check the assignment instructions or contact your lecturer member directly to inquire about resubmission options.'
         },
         {
           id: 'assign-3',
           question: 'How do I view feedback on my submitted assignments?',
-          answer: 'After your faculty member grades and provides feedback, you can usually find it on the same assignment page where you submitted your work. Look for comments, rubrics, or attached feedback files.'
+          answer: 'After your lecturer member grades and provides feedback, you can usually find it on the same assignment page where you submitted your work. Look for comments, rubrics, or attached feedback files.'
         }
       ]
     },
@@ -97,7 +97,7 @@ const HelpModule = () => {
         {
           id: 'att-2',
           question: 'What if there\'s an error in my attendance record?',
-          answer: 'If you believe there\'s a mistake in your attendance, please contact your faculty member or the college administration as soon as possible with details and any supporting documentation (e.g., doctor\'s note).'
+          answer: 'If you believe there\'s a mistake in your attendance, please contact your lecturer member or the college administration as soon as possible with details and any supporting documentation (e.g., doctor\'s note).'
         }
       ]
     },
@@ -107,8 +107,8 @@ const HelpModule = () => {
       questions: [
         {
           id: 'com-1',
-          question: 'How do I send a message to my faculty member?',
-          answer: 'Most faculty members can be contacted directly through the "Messages" or "Communication" section within the platform. Select "Compose New Message" and choose your faculty member as the recipient.'
+          question: 'How do I send a message to my lecturer member?',
+          answer: 'Most lecturer members can be contacted directly through the "Messages" or "Communication" section within the platform. Select "Compose New Message" and choose your lecturer member as the recipient.'
         },
         {
           id: 'com-2',

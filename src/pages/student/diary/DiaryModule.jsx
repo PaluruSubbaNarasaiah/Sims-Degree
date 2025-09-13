@@ -8,7 +8,7 @@ const DiaryModule = () => {
     const [homeworkEntries, setHomeworkEntries] = useState([
         {
             id: 'hw1',
-            teacherId: 'faculty_F123', // Assigned by faculty F123
+            lecturerId: 'lecturer_F123', // Assigned by lecturer F123
             date: '2025-06-27',
             homeworkItems: [
                 { subject: 'Mathematics', homework: 'Complete calculus problems on derivatives and integrals (Chapter 8).' },
@@ -17,7 +17,7 @@ const DiaryModule = () => {
         },
         {
             id: 'hw4',
-            teacherId: 'faculty_F125', // Assigned by faculty F125
+            lecturerId: 'lecturer_F125', // Assigned by lecturer F125
             date: '2025-06-28', // Future date
             homeworkItems: [
                 { subject: 'Physics', homework: 'Solve advanced mechanics problems on rotational dynamics.' },
@@ -26,17 +26,17 @@ const DiaryModule = () => {
         },
     ]);
 
-    // --- Mock data for student's enrolled classes/teachers ---
-    // This simulates the relationship: which faculty members' homework should this student see.
+    // --- Mock data for student's enrolled classes/lecturers ---
+    // This simulates the relationship: which lecturer members' homework should this student see.
     // In a real system, this would be determined by the student's actual class enrollments.
-    const [studentAssociatedFacultyIds] = useState(['faculty_F123', 'faculty_F125']); // Student S001 gets homework from F123 and F125
+    const [studentAssociatedlecturerIds] = useState(['lecturer_F123', 'lecturer_F125']); // Student S001 gets homework from F123 and F125
 
-    // Filter and sort homework entries for display based on the student's associated teachers
+    // Filter and sort homework entries for display based on the student's associated lecturers
     const displayedHomeworkEntries = useMemo(() => {
         return homeworkEntries
-            .filter(entry => studentAssociatedFacultyIds.includes(entry.teacherId)) // Only show homework from assigned faculty
+            .filter(entry => studentAssociatedlecturerIds.includes(entry.lecturerId)) // Only show homework from assigned lecturer
             .sort((a, b) => parseISO(b.date).getTime() - parseISO(a.date).getTime()); // Sort by date descending
-    }, [homeworkEntries, studentAssociatedFacultyIds]);
+    }, [homeworkEntries, studentAssociatedlecturerIds]);
 
     return (
     <div className="px-0 sm:px-2 md:px-4 lg:p-6 flex flex-col gap-2 sm:gap-4 lg:gap-8">
@@ -49,7 +49,7 @@ const DiaryModule = () => {
             {/* Content Area for Home Work Diary */}
             <div className="space-y-4">
                 {displayedHomeworkEntries.length === 0 ? (
-                    <div className="text-center text-gray-500 py-10">No homework assignments found from your faculty members.</div>
+                    <div className="text-center text-gray-500 py-10">No homework assignments found from your lecturer members.</div>
                 ) : (
                     <div className="space-y-4">
                         {displayedHomeworkEntries.map(entry => (
@@ -57,8 +57,8 @@ const DiaryModule = () => {
                                 <div className="flex justify-between items-start mb-2">
                                     <div className="flex-1 min-w-0">
                                         <p className="text-xs text-gray-500">{format(parseISO(entry.date), 'MMM dd, yyyy')}</p>
-                                        {/* You might want to display the faculty member's name here, if available */}
-                                        {/* <p className="text-xs text-gray-400">Assigned by: [Faculty Name based on {entry.teacherId}]</p> */}
+                                        {/* You might want to display the lecturer member's name here, if available */}
+                                        {/* <p className="text-xs text-gray-400">Assigned by: [lecturer Name based on {entry.lecturerId}]</p> */}
                                     </div>
                                     {/* No edit/delete buttons for students */}
                                 </div>

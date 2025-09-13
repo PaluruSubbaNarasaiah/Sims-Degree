@@ -5,18 +5,18 @@ import {
     CheckCircle,
     XCircle,
     ListTodo,
-    Briefcase, // For Leave Type (teacher's work-related leave)
-    User, // For Teacher name
+    Briefcase, // For Leave Type (lecturer's work-related leave)
+    User, // For lecturer name
     MessageSquare, // For comment button
     Edit, // Icon for edit button
     Clock, // For requested time
 } from 'lucide-react';
 
-// Mock data for teacher leave requests that the admin would see
-const mockTeacherLeaveRequests = [
+// Mock data for lecturer leave requests that the admin would see
+const mocklecturerLeaveRequests = [
     {
         id: 101,
-        applicantId: 'teacher1',
+        applicantId: 'lecturer1',
         applicantName: 'Mrs. Smith',
         employeeId: 'EMP001',
         leaveType: 'Sick Leave',
@@ -24,12 +24,12 @@ const mockTeacherLeaveRequests = [
         endDate: '2024-07-25',
         reason: 'Fever and body ache.',
         status: 'Pending',
-        adminComment: '', // Admin's comment on teacher's leave
+        adminComment: '', // Admin's comment on lecturer's leave
         requestedAt: '2024-07-10T09:00:00Z',
     },
     {
         id: 102,
-        applicantId: 'teacher2',
+        applicantId: 'lecturer2',
         applicantName: 'Mr. John Doe',
         employeeId: 'EMP002',
         leaveType: 'Casual Leave',
@@ -42,7 +42,7 @@ const mockTeacherLeaveRequests = [
     },
     {
         id: 103,
-        applicantId: 'teacher1',
+        applicantId: 'lecturer1',
         applicantName: 'Mrs. Smith',
         employeeId: 'EMP001',
         leaveType: 'Earned Leave',
@@ -55,7 +55,7 @@ const mockTeacherLeaveRequests = [
     },
     {
         id: 104,
-        applicantId: 'teacher3',
+        applicantId: 'lecturer3',
         applicantName: 'Ms. Emily White',
         employeeId: 'EMP003',
         leaveType: 'Emergency',
@@ -69,7 +69,7 @@ const mockTeacherLeaveRequests = [
 ];
 
 const LeaveModule = () => {
-    const [teacherLeaveRequests, setTeacherLeaveRequests] = useState([]);
+    const [lecturerLeaveRequests, setlecturerLeaveRequests] = useState([]);
     const [error, setError] = useState(null);
 
     // State for comment modal
@@ -80,9 +80,9 @@ const LeaveModule = () => {
     // New state to track which request's actions are being edited
     const [editingActionId, setEditingActionId] = useState(null);
 
-    // Simulate fetching teacher leave requests on component mount
+    // Simulate fetching lecturer leave requests on component mount
     useEffect(() => {
-        setTeacherLeaveRequests(mockTeacherLeaveRequests);
+        setlecturerLeaveRequests(mocklecturerLeaveRequests);
     }, []);
 
     const getStatusColorClass = (status) => {
@@ -100,7 +100,7 @@ const LeaveModule = () => {
 
     // Handler for updating status (Approve/Reject)
     const handleUpdateStatus = (requestId, newStatus) => {
-        setTeacherLeaveRequests(prevRequests =>
+        setlecturerLeaveRequests(prevRequests =>
             prevRequests.map(request =>
                 request.id === requestId
                     ? {
@@ -128,7 +128,7 @@ const LeaveModule = () => {
 
     const handleSaveComment = () => {
         if (selectedRequestForComment) {
-            setTeacherLeaveRequests(prevRequests =>
+            setlecturerLeaveRequests(prevRequests =>
                 prevRequests.map(request =>
                     request.id === selectedRequestForComment.id
                         ? { ...request, adminComment: modalComment } // Update adminComment
@@ -157,21 +157,21 @@ const LeaveModule = () => {
             {/* Header */}
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4">
                 <h1 className="text-3xl font-extrabold text-gray-900 flex items-center mb-4 sm:mb-0">
-                    <Calendar className="mr-3 text-blue-600" size={32} /> Teacher Leave Requests
+                    <Calendar className="mr-3 text-blue-600" size={32} /> lecturer Leave Requests
                 </h1>
             </div>
 
-            {/* Teacher Leave Requests Table */}
+            {/* lecturer Leave Requests Table */}
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
                 <div className="p-4 border-b">
                     <h2 className="text-lg sm:text-xl font-semibold text-gray-800 flex items-center">
-                        <ListTodo size={20} className="mr-3 text-gray-600" /> All Teacher Leave Applications
+                        <ListTodo size={20} className="mr-3 text-gray-600" /> All lecturer Leave Applications
                     </h2>
                 </div>
 
-                {teacherLeaveRequests.length === 0 ? (
+                {lecturerLeaveRequests.length === 0 ? (
                     <div className="p-8 text-center text-gray-500">
-                        No teacher leave requests to display.
+                        No lecturer leave requests to display.
                     </div>
                 ) : (
                     <div className="overflow-x-auto">
@@ -179,7 +179,7 @@ const LeaveModule = () => {
                             <thead className="bg-gray-50">
                                 <tr>
                                     <th className="px-3 py-2 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider sm:px-6 sm:py-3">
-                                        <User size={14} className="inline mr-1 text-gray-500" /> Teacher Name
+                                        <User size={14} className="inline mr-1 text-gray-500" /> lecturer Name
                                     </th>
                                     <th className="px-3 py-2 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider sm:px-6 sm:py-3">
                                         <Briefcase size={14} className="inline mr-1 text-gray-500" /> Leave Type
@@ -205,7 +205,7 @@ const LeaveModule = () => {
                                 </tr>
                             </thead>
                             <tbody className="bg-white divide-y divide-gray-200">
-                                {teacherLeaveRequests.map(request => (
+                                {lecturerLeaveRequests.map(request => (
                                     <tr key={request.id} className="hover:bg-gray-50 transition duration-150">
                                         <td className="px-3 py-2 whitespace-nowrap text-xs font-medium text-gray-900 sm:px-6 sm:py-4 sm:text-sm">
                                             {request.applicantName} (ID: {request.employeeId})

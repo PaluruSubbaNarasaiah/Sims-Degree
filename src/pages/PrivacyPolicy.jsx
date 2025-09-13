@@ -113,7 +113,7 @@ const PrivacyPolicy = () => {
                     <li className="flex items-start">
                         <span className="font-bold mr-2 text-red-500">&bull;</span>
                         <p>
-                            **With the Institute:** Your data is accessible to authorized personnel within your educational institution (e.g., administrators, teachers, relevant staff) for legitimate academic and administrative purposes directly related to your role or enrollment.
+                            **With the Institute:** Your data is accessible to authorized personnel within your educational institution (e.g., administrators, lecturers, relevant staff) for legitimate academic and administrative purposes directly related to your role or enrollment.
                         </p>
                     </li>
                     <li className="flex items-start">

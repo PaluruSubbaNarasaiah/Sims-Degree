@@ -14,17 +14,17 @@ import {
 export const menuItems = [ // Export menuItems
   {
     items: [
-      { icon: FaSchool, label: "Home", href: "/parent", visible: ["admin", "teacher", "student", "parent"], keywords: ["dashboard", "overview"] }, // Added keywords
+      { icon: FaSchool, label: "Home", href: "/parent", visible: ["admin", "lecturer", "student", "parent"], keywords: ["dashboard", "overview"] }, // Added keywords
       { icon: FaUsers, label: "My Students", href: "/parent/mychildren", visible: ["parent"], keywords: ["students", "wards"] }, // Added keywords
       { icon: FaCreditCard, label: "College Fees", href: "/parent/fee", visible: ["parent"], keywords: ["payments", "dues", "tuition"] }, // Added keywords
-      { icon: FaBook, label: "Academic Diary", href: "/parent/diary", visible: ["admin", "teacher", "student", "parent"], keywords: ["daily journal", "notes", "activities"] }, // Added keywords
-      { icon: FaClipboardList, label: "Academic Reports", href: "/parent/exams", visible: ["admin", "teacher", "student", "parent"], keywords: ["grades", "results", "tests", "scores"] }, // Added keywords
-      { icon: FaUserCheck, label: "Attendance", href: "/parent/attendance", visible: ["admin", "teacher", "student", "parent"], keywords: ["daily attendance", "record", "absent", "present"] }, // Added keywords
-      { icon: FaCalendarAlt, label: "Leaves", href: "/parent/leaves", visible: ["admin", "teacher","parent"], keywords: ["leave requests", "absences"] }, // Added keywords
-      { icon: FaCalendarCheck, label: "College Events", href: "/parent/events", visible: ["admin", "teacher", "student", "parent"], keywords: ["college events", "calendar", "activities"] }, // Added keywords
-      { icon: FaComments, label: "Messages", href: "/parent/messages", visible: ["admin", "teacher", "student", "parent"], keywords: ["inbox", "chats", "communication"] }, // Added keywords
-      { icon: FaBullhorn, label: "College Notices", href: "/parent/announcements", visible: ["admin", "teacher", "student", "parent"], keywords: ["notifications", "notices", "updates"] }, // Added keywords
-      { icon: FaQuestionCircle, label: "Help", href: "/parent/help", visible: ["admin", "teacher", "student", "parent"], keywords: ["support", "faq", "guide"] }, // Added keywords
+      { icon: FaBook, label: "Academic Diary", href: "/parent/diary", visible: ["admin", "lecturer", "student", "parent"], keywords: ["daily journal", "notes", "activities"] }, // Added keywords
+      { icon: FaClipboardList, label: "Academic Reports", href: "/parent/exams", visible: ["admin", "lecturer", "student", "parent"], keywords: ["grades", "results", "tests", "scores"] }, // Added keywords
+      { icon: FaUserCheck, label: "Attendance", href: "/parent/attendance", visible: ["admin", "lecturer", "student", "parent"], keywords: ["daily attendance", "record", "absent", "present"] }, // Added keywords
+      { icon: FaCalendarAlt, label: "Leaves", href: "/parent/leaves", visible: ["admin", "lecturer","parent"], keywords: ["leave requests", "absences"] }, // Added keywords
+      { icon: FaCalendarCheck, label: "College Events", href: "/parent/events", visible: ["admin", "lecturer", "student", "parent"], keywords: ["college events", "calendar", "activities"] }, // Added keywords
+      { icon: FaComments, label: "Messages", href: "/parent/messages", visible: ["admin", "lecturer", "student", "parent"], keywords: ["inbox", "chats", "communication"] }, // Added keywords
+      { icon: FaBullhorn, label: "College Notices", href: "/parent/announcements", visible: ["admin", "lecturer", "student", "parent"], keywords: ["notifications", "notices", "updates"] }, // Added keywords
+      { icon: FaQuestionCircle, label: "Help", href: "/parent/help", visible: ["admin", "lecturer", "student", "parent"], keywords: ["support", "faq", "guide"] }, // Added keywords
     ],
   },
 ];

@@ -79,7 +79,7 @@ const Menu = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
                     const isRootPath = item.href === "/admin";
                     const isActive = isRootPath
                       ? location.pathname === item.href || location.pathname === "/" // Matches /admin or /
-                      : location.pathname.startsWith(item.href); // Matches /admin/Facultys for /admin/Facultys/add
+                      : location.pathname.startsWith(item.href); // Matches /admin/lecturers for /admin/lecturers/add
 
                     return (
                       <Link

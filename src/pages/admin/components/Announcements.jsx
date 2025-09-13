@@ -38,13 +38,13 @@ function Announcements () {
           </div>
           <div className="bg-yellow-50 bg-opacity-70 rounded-lg p-4 border border-yellow-100 shadow-sm hover:shadow-md transition-all duration-200">
             <div className="flex items-start justify-between mb-2">
-              <h2 className="font-semibold text-gray-800 text-base leading-snug">Reminder: College Holiday</h2>
+              <h2 className="font-semibold text-gray-800 text-base leading-snug">Reminder: School Holiday</h2>
               <span className="text-xs text-gray-600 bg-white bg-opacity-70 rounded-full px-2 py-1 flex items-center gap-1 shadow-sm">
                 <FaCalendarAlt className="text-gray-400 text-xs" /> 2025-01-01
               </span>
             </div>
             <p className="text-sm text-gray-700 mt-1 leading-snug">
-              The Colleg will be closed on January 26th for Republic Day. Classes will resume on January 27th.
+              The school will be closed on January 26th for Republic Day. Classes will resume on January 27th.
             </p>
           </div>
         </div>

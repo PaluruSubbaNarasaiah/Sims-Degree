@@ -30,8 +30,8 @@ const MyChildrenModule = () => {
         dateOfBirth: '2014-03-15',
         parentId: 'PNT001', // Changed from parentEmail to parentId
         parentPhone: '+919876543210',
-        faculty: 'Dr. David Lee',
-        facultyId: 'F001', // Added teacherId
+        lecturer: 'Dr. David Lee',
+        lecturerId: 'F001', // Added lecturerId
         address: '123, Pine Street, Bengaluru, Karnataka, 560001'
       },
       {
@@ -45,8 +45,8 @@ const MyChildrenModule = () => {
         dateOfBirth: '2016-09-01',
         parentId: 'PNT002', // Changed from parentEmail to parentId
         parentPhone: '+919876543210',
-        faculty: 'Prof. Emily White',
-        facultyId: 'F002', // Added teacherId
+        lecturer: 'Prof. Emily White',
+        lecturerId: 'F002', // Added lecturerId
         address: '456, Oak Avenue, Bengaluru, Karnataka, 560002'
       },
     ];
@@ -100,7 +100,7 @@ const MyChildrenModule = () => {
                   </div>
                   <div className="flex items-center gap-3 bg-green-50/50 p-3 rounded-lg border border-green-100">
                     <BookOpen size={20} className="text-green-600" />
-                    <span className="font-semibold text-gray-800">Faculty:</span> {child.faculty || 'N/A'}
+                    <span className="font-semibold text-gray-800">lecturer:</span> {child.lecturer || 'N/A'}
                   </div>
                   <div className="flex items-center gap-3 bg-purple-50/50 p-3 rounded-lg border border-purple-100">
                     <Calendar size={20} className="text-purple-600" />
@@ -157,7 +157,7 @@ const MyChildrenModule = () => {
               </div>
               <div className="flex items-center gap-2">
                 <BookOpen size={18} className="text-green-600" />
-                <span className="font-semibold text-sm">Faculty:</span> <span className="text-sm">{selectedChild.faculty || 'N/A'} {selectedChild.facultyId ? `(${selectedChild.facultyId})` : ''}</span> {/* Updated to show Teacher ID */}
+                <span className="font-semibold text-sm">lecturer:</span> <span className="text-sm">{selectedChild.lecturer || 'N/A'} {selectedChild.lecturerId ? `(${selectedChild.lecturerId})` : ''}</span> {/* Updated to show lecturer ID */}
               </div>
               <div className="flex items-center gap-2">
                 <Calendar size={18} className="text-purple-600" />

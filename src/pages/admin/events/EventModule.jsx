@@ -28,7 +28,7 @@ const EventModule = () => {
             startDate: '2025-06-28', 
             endDate: '2025-06-28', 
             eventType: ['Meeting'], 
-            targetAudience: ['Teachers'], 
+            targetAudience: ['lecturers'], 
             status: 'upcoming',
             color: '#3B82F6' 
         }

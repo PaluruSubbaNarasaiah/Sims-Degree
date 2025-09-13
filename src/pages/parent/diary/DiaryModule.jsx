@@ -29,7 +29,7 @@ const DiaryModule = () => {
         'child1': [
             {
                 id: 'hw1_child1',
-                teacherId: 'teacher_T123',
+                lecturerId: 'lecturer_T123',
                 date: '2025-06-27',
                 homeworkItems: [
                     { subject: 'Mathematics', homework: 'Complete exercises on Quadratic Equations (pg 45-47).' },
@@ -38,7 +38,7 @@ const DiaryModule = () => {
             },
             {
                 id: 'hw2_child1',
-                teacherId: 'teacher_T124',
+                lecturerId: 'lecturer_T124',
                 date: '2025-06-26',
                 homeworkItems: [
                     { subject: 'English', homework: 'Read Chapter 5 of "The Great Gatsby" and write a summary.' }
@@ -46,7 +46,7 @@ const DiaryModule = () => {
             },
             {
                 id: 'hw3_child1',
-                teacherId: 'teacher_T123',
+                lecturerId: 'lecturer_T123',
                 date: '2025-06-25',
                 homeworkItems: [
                     { subject: 'Mathematics', homework: 'Review fractions for upcoming test.' }
@@ -54,7 +54,7 @@ const DiaryModule = () => {
             },
             {
                 id: 'hw4_child1',
-                teacherId: 'teacher_T125',
+                lecturerId: 'lecturer_T125',
                 date: '2025-06-28', // Future date
                 homeworkItems: [
                     { subject: 'Physics', homework: 'Solve problems on Newton\'s Laws (Chapter 3).' },
@@ -65,7 +65,7 @@ const DiaryModule = () => {
         'child2': [
             {
                 id: 'hw1_child2',
-                teacherId: 'teacher_T126',
+                lecturerId: 'lecturer_T126',
                 date: '2025-06-27',
                 homeworkItems: [
                     { subject: 'Art', homework: 'Sketch a landscape using watercolors.' }
@@ -73,7 +73,7 @@ const DiaryModule = () => {
             },
             {
                 id: 'hw2_child2',
-                teacherId: 'teacher_T127',
+                lecturerId: 'lecturer_T127',
                 date: '2025-06-25',
                 homeworkItems: [
                     { subject: 'History', homework: 'Research ancient civilizations and prepare a short presentation.' }
@@ -81,7 +81,7 @@ const DiaryModule = () => {
             },
             {
                 id: 'hw3_child2',
-                teacherId: 'teacher_T126',
+                lecturerId: 'lecturer_T126',
                 date: '2025-06-28', // Future date
                 homeworkItems: [
                     { subject: 'Music', homework: 'Practice scales for 15 minutes.' }
@@ -170,8 +170,8 @@ const DiaryModule = () => {
                                         <div className="flex justify-between items-start mb-2">
                                             <div className="flex-1 min-w-0">
                                                 <p className="text-xs text-gray-500 sm:text-sm">{format(parseISO(entry.date), 'MMM dd, yyyy')}</p>
-                                                {/* Optionally display teacher's ID or name if available */}
-                                                {/* <p className="text-xs text-gray-400">Assigned by: {entry.teacherId}</p> */}
+                                                {/* Optionally display lecturer's ID or name if available */}
+                                                {/* <p className="text-xs text-gray-400">Assigned by: {entry.lecturerId}</p> */}
                                             </div>
                                         </div>
                                         <div className="space-y-2 text-sm text-gray-700 mt-2">

@@ -9,9 +9,9 @@ export const MessageProvider = ({ children }) => {
     // Ensure you keep this data consistent with MessageModule's initial state
     {
       id: 'msg-001',
-      subject: 'Parent-Faculty Meeting Reminder',
-      content: 'This is a reminder about the upcoming parent-faculty meeting scheduled for Friday, June 10th at 3:00 PM in the college auditorium.',
-      sender: 'faculty@college.edu',
+      subject: 'Parent-lecturer Meeting Reminder',
+      content: 'This is a reminder about the upcoming parent-lecturer meeting scheduled for Friday, June 10th at 3:00 PM in the college auditorium.',
+      sender: 'lecturer@college.edu',
       recipients: ['parent1@email.com', 'parent2@email.com'],
       status: 'sent',
       date: '2023-06-05T14:30:00Z',
@@ -37,8 +37,8 @@ export const MessageProvider = ({ children }) => {
       id: 'msg-003',
       subject: 'Draft Message Example',
       content: 'This is a message I started writing but haven\'t sent yet.',
-      sender: 'faculty@college.edu',
-      recipients: ['faculty1@college.edu'],
+      sender: 'lecturer@college.edu',
+      recipients: ['lecturer1@college.edu'],
       status: 'draft',
       date: '2023-06-09T09:00:00Z',
       read: false,

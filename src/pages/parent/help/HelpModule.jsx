@@ -60,7 +60,7 @@ const HelpModule = () => {
         {
           id: 'cp-3',
           question: 'How do I view upcoming assignments and homework?',
-          answer: 'On your child\'s dashboard or within their class pages, there is usually an "Assignments" or "Homework" section listing all upcoming and past assignments, along with due dates and faculty instructions.'
+          answer: 'On your child\'s dashboard or within their class pages, there is usually an "Assignments" or "Homework" section listing all upcoming and past assignments, along with due dates and lecturer instructions.'
         }
       ]
     },
@@ -86,8 +86,8 @@ const HelpModule = () => {
       questions: [
         {
           id: 'com-1',
-          question: 'How do I send a message to my child\'s faculty member?',
-          answer: 'Go to "Messages" or "Communication". You can compose a new message, select your child\'s faculty member as the recipient, and send your inquiry. You can also view message history.'
+          question: 'How do I send a message to my child\'s lecturer member?',
+          answer: 'Go to "Messages" or "Communication". You can compose a new message, select your child\'s lecturer member as the recipient, and send your inquiry. You can also view message history.'
         },
         {
           id: 'com-2',
@@ -96,8 +96,8 @@ const HelpModule = () => {
         },
         {
           id: 'com-3',
-          question: 'How do I schedule a parent-faculty meeting?',
-          answer: 'You can request a meeting through the faculty member\'s profile or via the "Communication" section. Some systems may have a direct "Book Meeting" feature, or you may need to send a message to arrange a time.'
+          question: 'How do I schedule a parent-lecturer meeting?',
+          answer: 'You can request a meeting through the lecturer member\'s profile or via the "Communication" section. Some systems may have a direct "Book Meeting" feature, or you may need to send a message to arrange a time.'
         }
       ]
     }

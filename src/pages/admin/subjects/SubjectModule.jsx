@@ -6,7 +6,7 @@ import {
   X,
   Pencil,
   BookText, // Icon for Subject
-  User, // For individual teacher
+  User, // For individual lecturer
   Info, // For info/error alert 
   CheckCircle, // For success alert
   Save // Added Save icon
@@ -17,22 +17,30 @@ const SubjectModule = () => {
   // Initial data now includes classes, and subjects are nested within each class.
   const initialProgramCourses = () => {
     const programs = {};
-    for (let i = 1; i <= 4; i++) {
-      programs[`Program ${i}`] = []; // Each program starts with an empty array of subjects
-    }
-    // Add some sample data for a few classes
-    programs['Program 1'] = [
-      { id: 101, name: 'Basic Math', teachers: [{ empId: 'T001', name: 'Ms. Emily' }] },
-      { id: 102, name: 'Alphabets', teachers: [{ empId: 'T002', name: 'Mr. David' }] },
+    const programNames = ['Pre-Engineering', 'Pre-Medical', 'Commerce', 'Arts'];
+    programNames.forEach(program => {
+      programs[program] = []; // Each program starts with an empty array of subjects
+    });
+    // Add some sample data for intermediate college programs
+    programs['Pre-Engineering'] = [
+      { id: 101, name: 'Mathematics', lecturers: [{ empId: 'L001', name: 'Mr. Ahmad Khan' }] },
+      { id: 102, name: 'Physics', lecturers: [{ empId: 'L002', name: 'Ms. Sarah Ahmed' }] },
+      { id: 103, name: 'Chemistry', lecturers: [{ empId: 'L003', name: 'Mr. Hassan Ali' }] },
     ];
-    programs['Program 2'] = [
-      { id: 501, name: 'Algebra Fundamentals', teachers: [{ empId: 'T003', name: 'Dr. Lee' }] },
-      { id: 502, name: 'Ancient History', teachers: [{ empId: 'T004', name: 'Ms. Sarah' }] },
+    programs['Pre-Medical'] = [
+      { id: 201, name: 'Biology', lecturers: [{ empId: 'L004', name: 'Dr. Fatima Sheikh' }] },
+      { id: 202, name: 'Chemistry', lecturers: [{ empId: 'L003', name: 'Mr. Hassan Ali' }] },
+      { id: 203, name: 'Physics', lecturers: [{ empId: 'L002', name: 'Ms. Sarah Ahmed' }] },
     ];
-    programs['Program 3'] = [
-      { id: 1001, name: 'Calculus', teachers: [{ empId: 'T005', name: 'Prof. Garcia' }] },
-      { id: 1002, name: 'Physics Mechanics', teachers: [{ empId: 'T006', name: 'Dr. Chen' }] },
-      { id: 1003, name: 'World Literature', teachers: [{ empId: 'T007', name: 'Ms. White' }] },
+    programs['Commerce'] = [
+      { id: 301, name: 'Accounting', lecturers: [{ empId: 'L005', name: 'Mr. Tariq Mahmood' }] },
+      { id: 302, name: 'Economics', lecturers: [{ empId: 'L006', name: 'Ms. Ayesha Malik' }] },
+      { id: 303, name: 'Business Studies', lecturers: [{ empId: 'L007', name: 'Mr. Usman Sheikh' }] },
+    ];
+    programs['Arts'] = [
+      { id: 401, name: 'History', lecturers: [{ empId: 'L008', name: 'Ms. Zara Khan' }] },
+      { id: 402, name: 'Geography', lecturers: [{ empId: 'L009', name: 'Mr. Ali Raza' }] },
+      { id: 403, name: 'Psychology', lecturers: [{ empId: 'L010', name: 'Dr. Nadia Iqbal' }] },
     ];
     return programs;
   };
@@ -42,19 +50,19 @@ const SubjectModule = () => {
     return storedProgramCourses ? JSON.parse(storedProgramCourses) : initialProgramCourses();
   });
 
-  const [selectedProgram, setSelectedProgram] = useState('Program 1'); // Default to Program 1
+  const [selectedProgram, setSelectedProgram] = useState('Pre-Engineering'); // Default to Pre-Engineering
   const [filteredSubjects, setFilteredSubjects] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [newSubject, setNewSubject] = useState({
     name: '',
-    teachers: [{ empId: '', name: '' }]
+    lecturers: [{ empId: '', name: '' }]
   });
   const [showAddForm, setShowAddForm] = useState(false); 
   const [editingSubject, setEditingSubject] = useState(null); // Stores the entire subject object for editing
   const [alert, setAlert] = useState({ message: '', type: '' }); // type: 'success' or 'error'
 
-  // Generate class options (Class 1 to Class 10)
-  const programOptions = Array.from({ length: 4 }, (_, i) => `Program ${i + 1}`);
+  // Generate program options for intermediate college
+  const programOptions = ['Pre-Engineering', 'Pre-Medical', 'Commerce', 'Arts'];
 
   // Update localStorage whenever classSubjects change
   useEffect(() => {
@@ -69,47 +77,47 @@ const SubjectModule = () => {
     if (searchTerm) {
       results = results.filter(subject =>
         subject.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        subject.teachers.some(teacher =>
-          teacher.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          teacher.empId.toLowerCase().includes(searchTerm.toLowerCase())
+        subject.lecturers.some(lecturer =>
+          lecturer.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          lecturer.empId.toLowerCase().includes(searchTerm.toLowerCase())
         )
       );
     }
     setFilteredSubjects(results);
   }, [searchTerm, programCourses, selectedProgram]);
 
-  // Add teacher field in form
-  const addTeacherField = () => {
+  // Add lecturer field in form
+  const addlecturerField = () => {
     setNewSubject(prev => ({
       ...prev,
-      teachers: [...prev.teachers, { empId: '', name: '' }]
+      lecturers: [...prev.lecturers, { empId: '', name: '' }]
     }));
   };
 
-  // Remove teacher field in form
-  const removeTeacherField = (index) => {
-    const updatedTeachers = [...newSubject.teachers];
-    updatedTeachers.splice(index, 1);
+  // Remove lecturer field in form
+  const removelecturerField = (index) => {
+    const updatedlecturers = [...newSubject.lecturers];
+    updatedlecturers.splice(index, 1);
     setNewSubject(prev => ({
       ...prev,
-      teachers: updatedTeachers
+      lecturers: updatedlecturers
     }));
   };
 
-  // Handle teacher input change
-  const handleTeacherChange = (index, field, value) => {
-    const updatedTeachers = [...newSubject.teachers];
-    updatedTeachers[index][field] = value;
+  // Handle lecturer input change
+  const handlelecturerChange = (index, field, value) => {
+    const updatedlecturers = [...newSubject.lecturers];
+    updatedlecturers[index][field] = value;
     setNewSubject(prev => ({
       ...prev,
-      teachers: updatedTeachers
+      lecturers: updatedlecturers
     }));
   };
 
   const resetForm = () => {
     setNewSubject({
       name: '',
-      teachers: [{ empId: '', name: '' }]
+      lecturers: [{ empId: '', name: '' }]
     });
     setEditingSubject(null);
     setShowAddForm(false);
@@ -121,16 +129,16 @@ const SubjectModule = () => {
       setAlert({ message: 'Subject Name is required.', type: 'error' });
       return;
     }
-    const validTeachers = newSubject.teachers.filter(t => t.empId && t.name);
-    if (validTeachers.length === 0) {
-      setAlert({ message: 'At least one teacher (with Employee ID and Name) is required for the subject.', type: 'error' });
+    const validlecturers = newSubject.lecturers.filter(t => t.empId && t.name);
+    if (validlecturers.length === 0) {
+      setAlert({ message: 'At least one lecturer (with Employee ID and Name) is required for the subject.', type: 'error' });
       return;
     } 
  
     const subjectToAdd = {
       id: Date.now(),
       name: newSubject.name,
-      teachers: validTeachers
+      lecturers: validlecturers
     };
 
     setProgramCourses(prevProgramCourses => ({
@@ -158,7 +166,7 @@ const SubjectModule = () => {
     setEditingSubject(subject);
     setNewSubject({
       name: subject.name,
-      teachers: subject.teachers.length > 0 ? subject.teachers : [{ empId: '', name: '' }]
+      lecturers: subject.lecturers.length > 0 ? subject.lecturers : [{ empId: '', name: '' }]
     });
     setShowAddForm(true);
     setAlert({ message: '', type: '' });
@@ -170,9 +178,9 @@ const SubjectModule = () => {
       setAlert({ message: 'Subject Name is required.', type: 'error' });
       return;
     }
-    const validTeachers = newSubject.teachers.filter(t => t.empId && t.name);
-    if (validTeachers.length === 0) {
-      setAlert({ message: 'At least one teacher (with Employee ID and Name) is required for the subject.', type: 'error' });
+    const validlecturers = newSubject.lecturers.filter(t => t.empId && t.name);
+    if (validlecturers.length === 0) {
+      setAlert({ message: 'At least one lecturer (with Employee ID and Name) is required for the subject.', type: 'error' });
       return;
     }
 
@@ -182,7 +190,7 @@ const SubjectModule = () => {
         subject.id === editingSubject.id ? {
           ...subject,
           name: newSubject.name,
-          teachers: validTeachers
+          lecturers: validlecturers
         } : subject
       )
     }));
@@ -265,7 +273,7 @@ const SubjectModule = () => {
           }}
           className="w-full md:w-auto flex items-center justify-center px-6 py-2.5 bg-indigo-600 text-white rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-4 focus:ring-indigo-500 focus:ring-opacity-50 transition transform hover:-translate-y-0.5" 
         >
-          <PlusCircle className="mr-2" size={20} /> Add Subject for {selectedProgram}
+          <PlusCircle className="mr-2" size={20} /> Add Subject
         </button>
       </div>
 
@@ -301,29 +309,29 @@ const SubjectModule = () => {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Teachers <span className="text-red-500">*</span></label>
-                  {newSubject.teachers.map((teacher, index) => (
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Lecturers <span className="text-red-500">*</span></label>
+                  {newSubject.lecturers.map((lecturer, index) => (
                     <div key={index} className="flex gap-2 mb-3 items-center">
                       <input
                         type="text"
                         className="flex-1 px-4 py-2.5 rounded-lg border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-gray-900 placeholder-gray-400 text-base transition-colors"
-                        value={teacher.empId}
-                        onChange={(e) => handleTeacherChange(index, 'empId', e.target.value)}
+                        value={lecturer.empId}
+                        onChange={(e) => handlelecturerChange(index, 'empId', e.target.value)}
                         placeholder="Employee ID"
                       />
                       <input
                         type="text"
                         className="flex-1 px-4 py-2.5 rounded-lg border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-gray-900 placeholder-gray-400 text-base transition-colors"
-                        value={teacher.name}
-                        onChange={(e) => handleTeacherChange(index, 'name', e.target.value)}
-                        placeholder="Teacher Name"
+                        value={lecturer.name}
+                        onChange={(e) => handlelecturerChange(index, 'name', e.target.value)}
+                        placeholder="Lecturer Name"
                       />
-                      {newSubject.teachers.length > 1 && (
+                      {newSubject.lecturers.length > 1 && (
                         <button
                           type="button"
-                          onClick={() => removeTeacherField(index)}
+                          onClick={() => removelecturerField(index)}
                           className="p-2 text-red-600 hover:text-red-800 rounded-full hover:bg-red-100 transition-colors"
-                          title="Remove Teacher"
+                          title="Remove Lecturer"
                         >
                           <X size={20} />
                         </button>
@@ -332,10 +340,10 @@ const SubjectModule = () => {
                   ))}
                   <button
                     type="button"
-                    onClick={addTeacherField}
+                    onClick={addlecturerField}
                     className="mt-1 flex items-center gap-1 text-sm text-indigo-600 hover:text-indigo-800 font-medium transition-colors"
                   >
-                    <PlusCircle size={18} /> Add Another Teacher
+                    <PlusCircle size={18} /> Add Another Lecturer
                   </button>
                 </div>
 
@@ -368,7 +376,7 @@ const SubjectModule = () => {
           <thead className="bg-gray-50"> 
             <tr>
               <th className="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Subject</th>
-              <th className="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Teachers</th>
+              <th className="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Lecturers</th>
               <th className="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Actions</th>
             </tr>
           </thead>
@@ -381,16 +389,16 @@ const SubjectModule = () => {
                   </td> 
                   <td className="px-6 py-4">
                     <div className="space-y-1">
-                      {subject.teachers.length > 0 ? (
-                        subject.teachers.map((teacher, index) => (
+                      {subject.lecturers.length > 0 ? (
+                        subject.lecturers.map((lecturer, index) => (
                           <div key={index} className="flex items-center text-sm text-gray-700">
                             <User size={16} className="mr-1.5 text-gray-500" />
-                            <span className="font-medium">{teacher.name}</span>
-                            <span className="text-gray-500 ml-1">({teacher.empId})</span>
+                            <span className="font-medium">{lecturer.name}</span>
+                            <span className="text-gray-500 ml-1">({lecturer.empId})</span>
                           </div>
                         ))
                       ) : (
-                        <span className="text-gray-500 text-sm italic">No teachers assigned</span>
+                        <span className="text-gray-500 text-sm italic">No lecturers assigned</span>
                       )}
                     </div>
                   </td>

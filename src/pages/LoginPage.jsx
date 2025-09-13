@@ -26,9 +26,9 @@ const LoginPage = ({ onClose, onForgotPasswordClick }) => {
         email: import.meta.env.VITE_ADMIN_EMAIL
       },
       {
-        username: import.meta.env.VITE_TEACHER_USERNAME,
-        password: import.meta.env.VITE_TEACHER_PASSWORD,
-        role: 'teacher'
+        username: import.meta.env.VITE_lecturer_USERNAME,
+        password: import.meta.env.VITE_lecturer_PASSWORD,
+        role: 'lecturer'
       },
       {
         username: import.meta.env.VITE_STUDENT_USERNAME,
@@ -62,8 +62,8 @@ const LoginPage = ({ onClose, onForgotPasswordClick }) => {
         case 'admin':
           navigate('/admin');
           break;
-        case 'teacher':
-          navigate('/teacher');
+        case 'lecturer':
+          navigate('/lecturer');
           break;
         case 'student':
           navigate('/student');

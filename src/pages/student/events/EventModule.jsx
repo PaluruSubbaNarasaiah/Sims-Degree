@@ -52,13 +52,13 @@ function EventsModule() {
     const rawEvents = [
       {
         id: 'evt003',
-        title: 'Parent-Faculty Meeting',
+        title: 'Parent-lecturer Meeting',
         description: 'Discussion regarding student progress.',
         eventType: ['Meeting'],
         startDate: '2025-08-01',
         endDate: null,
-        eventName: 'Parent-Faculty Meeting',
-        targetAudience: 'Parents, Faculty',
+        eventName: 'Parent-lecturer Meeting',
+        targetAudience: 'Parents, lecturer',
       },
       {
         id: 'evt004',

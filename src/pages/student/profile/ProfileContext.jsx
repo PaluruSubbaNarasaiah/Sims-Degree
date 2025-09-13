@@ -15,8 +15,8 @@ export const ProfileProvider = ({ children }) => {
     course: 'B.Sc Computer Science',
     semester: '3rd Semester',
     section: 'B',
-    classFacultyId: 'FAC005',
-    classFacultyName: 'Dr. Sharma',
+    classlecturerId: 'FAC005',
+    classlecturerName: 'Dr. Sharma',
     parentId: 'PAR001',
     parentName: 'Mr. & Mrs. Kumar'
   });

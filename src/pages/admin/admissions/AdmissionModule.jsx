@@ -8,11 +8,10 @@ import {
 
 // Constants for dropdown options (adjust as per your system's data)
 const DEGREE_PROGRAM_OPTIONS = [
-  { label: 'B.Sc. Computer Science', value: 'BSc-CS' },
-  { label: 'B.A. History', value: 'BA-Hist' },
-  { label: 'B.Com. General', value: 'BCom-Gen' },
-  { label: 'B.com. Comuputer', value: 'BCom-Com' },
-  { label: 'M.Sc. Physics', value: 'MSc-Phy' },
+  { label: 'Pre-Engineering', value: 'Pre-Eng' },
+  { label: 'Pre-Medical', value: 'Pre-Med' },
+  { label: 'Commerce', value: 'Commerce' },
+  { label: 'Arts', value: 'Arts' },
 ];
 
 const GENDER_OPTIONS = [
@@ -64,7 +63,7 @@ const MOCK_EXISTING_STUDENTS = [
     name: 'Emily Smith',
     dateOfBirth: '2005-03-10',
     gender: { value: 'Female', label: 'Female' },
-    degreeProgram: { value: 'BSc-CS', label: 'B.Sc. Computer Science' },
+    degreeProgram: { value: 'Pre-Eng', label: 'Pre-Engineering' },
     studentType: { value: 'New Student', label: 'New Student' },
     avatar: 'https://via.placeholder.com/150/FF0000/FFFFFF?text=ES',
   },
@@ -74,7 +73,7 @@ const MOCK_EXISTING_STUDENTS = [
     name: 'David Smith',
     dateOfBirth: '2003-07-22',
     gender: { value: 'Male', label: 'Male' },
-    degreeProgram: { value: 'BA-Hist', label: 'B.A. History' },
+    degreeProgram: { value: 'Arts', label: 'Arts' },
     studentType: { value: 'New Student', label: 'New Student' },
     avatar: 'https://via.placeholder.com/150/0000FF/FFFFFF?text=DS',
   },
@@ -84,7 +83,7 @@ const MOCK_EXISTING_STUDENTS = [
     name: 'Sarah Johnson',
     dateOfBirth: '2004-01-05',
     gender: { value: 'Female', label: 'Female' },
-    degreeProgram: { value: 'BTech-ME', label: 'B.Tech. Mechanical Engineering' },
+    degreeProgram: { value: 'Pre-Eng', label: 'Pre-Engineering' },
     studentType: { value: 'Transfer Student', label: 'Transfer Student' },
     avatar: 'https://via.placeholder.com/150/008000/FFFFFF?text=SJ',
     previousSchoolName: 'Downtown Central High School',
@@ -180,11 +179,11 @@ function AdmissionModule({ onSave, existingParents = MOCK_EXISTING_PARENTS, exis
     } else {
       const dob = new Date(student.dateOfBirth);
       const today = new Date();
-      // Calculate 17 years ago from today for college-level age validation
-      const seventeenYearsAgo = new Date(today.getFullYear() - 17, today.getMonth(), today.getDate());
+      // Calculate 15 years ago from today for intermediate college age validation
+      const fifteenYearsAgo = new Date(today.getFullYear() - 15, today.getMonth(), today.getDate());
 
-      if (dob > seventeenYearsAgo) {
-        errors.dateOfBirth = 'Student must be at least 17 years old';
+      if (dob > fifteenYearsAgo) {
+        errors.dateOfBirth = 'Student must be at least 15 years old';
       }
     }
     if (!student.gender) errors.gender = 'Gender is required';
@@ -910,9 +909,9 @@ function AdmissionModule({ onSave, existingParents = MOCK_EXISTING_PARENTS, exis
                         {studentsErrors[index]?.gender && <p className="mt-1 text-sm text-red-600">{studentsErrors[index].gender}</p>}
                       </div>
 
-                      {/* Degree Program */}
+                      {/* Program */}
                       <div>
-                        <label htmlFor={`degreeProgram-${index}`} className="block text-sm font-medium text-gray-700">Degree Program <span className="text-red-500">*</span></label>
+                        <label htmlFor={`degreeProgram-${index}`} className="block text-sm font-medium text-gray-700">Program <span className="text-red-500">*</span></label>
                         <Select
                           id={`degreeProgram-${index}`}
                           name="degreeProgram"
@@ -921,7 +920,7 @@ function AdmissionModule({ onSave, existingParents = MOCK_EXISTING_PARENTS, exis
                           onChange={(selectedOption) => handleSelectChangeStudent(index, 'degreeProgram', selectedOption)}
                           classNamePrefix="react-select"
                           className={`mt-1 ${studentsErrors[index]?.degreeProgram ? 'border border-red-500 rounded-md' : ''}`}
-                          placeholder="Select Degree Program"
+                          placeholder="Select Program"
                         />
                         {studentsErrors[index]?.degreeProgram && <p className="mt-1 text-sm text-red-600">{studentsErrors[index].degreeProgram}</p>}
                       </div>

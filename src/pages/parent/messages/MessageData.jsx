@@ -1,22 +1,22 @@
 // MessageData.jsx
 
 const mockUsers = [
-  // Faculty
-  { id: 'F001', name: 'Dr. Davis', type: 'Faculty' },
-  { id: 'F002', name: 'Prof. Evans', type: 'Faculty' },
-  { id: 'F003', name: 'Dr. Frank', type: 'Faculty' },
+  // lecturer
+  { id: 'F001', name: 'Dr. Davis', type: 'lecturer' },
+  { id: 'F002', name: 'Prof. Evans', type: 'lecturer' },
+  { id: 'F003', name: 'Dr. Frank', type: 'lecturer' },
 
 ];
 
 /**
  * Simulates fetching users based on a search query (ID or name).
- * For the student panel, it only returns 'Faculty' or 'Student' types.
+ * For the student panel, it only returns 'lecturer' or 'Student' types.
  *
  * @param {string} query The search string.
  * @returns {Array} An array of user objects matching the query and allowed types.
  */
 export const fetchUsers = (query) => {
-  const allowedTypes = ['Faculty', 'Student']; // Students can only message faculty and other students
+  const allowedTypes = ['lecturer', 'Student']; // Students can only message lecturer and other students
 
   if (!query) {
     // Return a small sample of allowed types for initial suggestions
@@ -37,7 +37,7 @@ export const fetchUsers = (query) => {
  * @returns {object|null} The user object if found, otherwise null.
  */
 export const fetchUserById = (id) => {
-  const allowedTypes = ['Faculty', 'Student']; // Students can only message faculty and other students
+  const allowedTypes = ['lecturer', 'Student']; // Students can only message lecturer and other students
   const user = mockUsers.find(u => u.id === id);
   return user && allowedTypes.includes(user.type) ? user : null; // Return null if type is not allowed
 };

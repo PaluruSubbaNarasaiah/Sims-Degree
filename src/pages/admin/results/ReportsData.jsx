@@ -4,79 +4,79 @@ export const AVERAGE_THRESHOLD = 50;
 export const EXCELLENT_THRESHOLD = 90;
 export const FAIL_THRESHOLD = 30;
 
-export const allPrograms = ['B.Sc. Computer Science', 'B.Com', 'B.A. History'];
-export const allSemesters = [1, 2, 3, 4, 5, 6];
+export const allPrograms = ['Pre-Engineering', 'Pre-Medical', 'Commerce', 'Arts'];
+export const allSemesters = [1, 2];
 
 export const coursesConfig = {
-  'Intro to Programming': { maxMarks: 100, passingMarks: 40 },
-  'Data Structures': { maxMarks: 100, passingMarks: 40 },
-  'Algorithms': { maxMarks: 100, passingMarks: 40 },
-  'Database Systems': { maxMarks: 100, passingMarks: 40 },
-  'Financial Accounting': { maxMarks: 100, passingMarks: 40 },
-  'Business Law': { maxMarks: 100, passingMarks: 40 },
-  'Microeconomics': { maxMarks: 100, passingMarks: 40 },
-  'Corporate Accounting': { maxMarks: 100, passingMarks: 40 },
-  'Macroeconomics': { maxMarks: 100, passingMarks: 40 },
-  'Modern History': { maxMarks: 100, passingMarks: 40 },
-  'Ancient Civilizations': { maxMarks: 100, passingMarks: 40 },
-  'Historiography': { maxMarks: 100, passingMarks: 40 },
-  'World History': { maxMarks: 100, passingMarks: 40 },
-  'Indian History': { maxMarks: 100, passingMarks: 40 },
+  'Mathematics': { maxMarks: 100, passingMarks: 33 },
+  'Physics': { maxMarks: 100, passingMarks: 33 },
+  'Chemistry': { maxMarks: 100, passingMarks: 33 },
+  'Biology': { maxMarks: 100, passingMarks: 33 },
+  'English': { maxMarks: 100, passingMarks: 33 },
+  'Urdu': { maxMarks: 100, passingMarks: 33 },
+  'Computer Science': { maxMarks: 100, passingMarks: 33 },
+  'Economics': { maxMarks: 100, passingMarks: 33 },
+  'Accounting': { maxMarks: 100, passingMarks: 33 },
+  'Business Studies': { maxMarks: 100, passingMarks: 33 },
+  'History': { maxMarks: 100, passingMarks: 33 },
+  'Geography': { maxMarks: 100, passingMarks: 33 },
+  'Psychology': { maxMarks: 100, passingMarks: 33 },
+  'Sociology': { maxMarks: 100, passingMarks: 33 },
 };
 
 export const students = [
-  // B.Sc. Computer Science Students
+  // Pre-Engineering Students
   {
-    id: 'CS21001', name: 'Alex Johnson', program: 'B.Sc. Computer Science', semester: 3, rollNo: 'CS301',
-    marks: { 'Intro to Programming': 92, 'Data Structures': 88, 'Financial Accounting': 75 }
+    id: 'PE21001', name: 'Alex Johnson', program: 'Pre-Engineering', semester: 1, rollNo: 'PE101',
+    marks: { 'Mathematics': 92, 'Physics': 88, 'Chemistry': 85 }
   },
   {
-    id: 'CS21002', name: 'Bianca Smith', program: 'B.Sc. Computer Science', semester: 3, rollNo: 'CS302',
-    marks: { 'Intro to Programming': 85, 'Data Structures': 82, 'Business Law': 78 }
+    id: 'PE21002', name: 'Bianca Smith', program: 'Pre-Engineering', semester: 1, rollNo: 'PE102',
+    marks: { 'Mathematics': 85, 'Physics': 82, 'Chemistry': 78 }
   },
   {
-    id: 'CS21003', name: 'Carlos Mendez', program: 'B.Sc. Computer Science', semester: 4, rollNo: 'CS401',
-    marks: { 'Data Structures': 75, 'Algorithms': 68, 'Database Systems': 72 }
+    id: 'PE21003', name: 'Carlos Mendez', program: 'Pre-Engineering', semester: 2, rollNo: 'PE201',
+    marks: { 'Mathematics': 75, 'Physics': 68, 'Chemistry': 72 }
   },
   {
-    id: 'CS21004', name: 'Diana Chen', program: 'B.Sc. Computer Science', semester: 4, rollNo: 'CS402',
-    marks: { 'Data Structures': 45, 'Algorithms': 35, 'Database Systems': 25 }
-  },
-
-  // B.Com Students
-  {
-    id: 'COM21001', name: 'Ethan Wilson', program: 'B.Com', semester: 1, rollNo: 'COM101',
-    marks: { 'Financial Accounting': 95, 'Business Law': 90, 'Microeconomics': 88 }
-  },
-  {
-    id: 'COM21002', name: 'Fiona Kim', program: 'B.Com', semester: 1, rollNo: 'COM102',
-    marks: { 'Financial Accounting': 82, 'Business Law': 78, 'Microeconomics': 85 }
-  },
-  {
-    id: 'COM21003', name: 'George Brown', program: 'B.Com', semester: 2, rollNo: 'COM201',
-    marks: { 'Corporate Accounting': 65, 'Macroeconomics': 72, 'Business Law': 68 }
-  },
-  {
-    id: 'COM21004', name: 'Hannah Lee', program: 'B.Com', semester: 2, rollNo: 'COM202',
-    marks: { 'Corporate Accounting': 35, 'Macroeconomics': 40, 'Business Law': 28 }
+    id: 'PE21004', name: 'Diana Chen', program: 'Pre-Engineering', semester: 2, rollNo: 'PE202',
+    marks: { 'Mathematics': 45, 'Physics': 35, 'Chemistry': 40 }
   },
 
-  // B.A. History Students
+  // Pre-Medical Students
   {
-    id: 'HIS21001', name: 'Ian Patel', program: 'B.A. History', semester: 5, rollNo: 'HIS501',
-    marks: { 'Modern History': 94, 'Ancient Civilizations': 89, 'Historiography': 91 }
+    id: 'PM21001', name: 'Ethan Wilson', program: 'Pre-Medical', semester: 1, rollNo: 'PM101',
+    marks: { 'Biology': 95, 'Chemistry': 90, 'Physics': 88 }
   },
   {
-    id: 'HIS21002', name: 'Julia Garcia', program: 'B.A. History', semester: 5, rollNo: 'HIS502',
-    marks: { 'Modern History': 80, 'Ancient Civilizations': 85, 'Historiography': 78 }
+    id: 'PM21002', name: 'Fiona Kim', program: 'Pre-Medical', semester: 1, rollNo: 'PM102',
+    marks: { 'Biology': 82, 'Chemistry': 78, 'Physics': 85 }
   },
   {
-    id: 'HIS21003', name: 'Kevin Zhang', program: 'B.A. History', semester: 6, rollNo: 'HIS601',
-    marks: { 'World History': 70, 'Indian History': 65, 'Historiography': 75 }
+    id: 'COM21001', name: 'George Brown', program: 'Commerce', semester: 1, rollNo: 'COM101',
+    marks: { 'Accounting': 65, 'Economics': 72, 'Business Studies': 68 }
   },
   {
-    id: 'HIS21004', name: 'Lily Wilson', program: 'B.A. History', semester: 6, rollNo: 'HIS602',
-    marks: { 'World History': 40, 'Indian History': 30, 'Historiography': 25 }
+    id: 'COM21002', name: 'Hannah Lee', program: 'Commerce', semester: 2, rollNo: 'COM201',
+    marks: { 'Accounting': 55, 'Economics': 60, 'Business Studies': 58 }
+  },
+
+  // Arts Students
+  {
+    id: 'ART21001', name: 'Ian Patel', program: 'Arts', semester: 1, rollNo: 'ART101',
+    marks: { 'History': 94, 'Geography': 89, 'Psychology': 91 }
+  },
+  {
+    id: 'ART21002', name: 'Julia Garcia', program: 'Arts', semester: 1, rollNo: 'ART102',
+    marks: { 'History': 80, 'Geography': 85, 'Psychology': 78 }
+  },
+  {
+    id: 'ART21003', name: 'Kevin Zhang', program: 'Arts', semester: 2, rollNo: 'ART201',
+    marks: { 'History': 70, 'Geography': 65, 'Sociology': 75 }
+  },
+  {
+    id: 'ART21004', name: 'Lily Wilson', program: 'Arts', semester: 2, rollNo: 'ART202',
+    marks: { 'History': 50, 'Geography': 45, 'Sociology': 48 }
   },
 ];
 

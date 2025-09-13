@@ -14,7 +14,7 @@ const eventTypeOptions = [
 
 const targetAudienceOptions = [
   { value: 'All', label: 'All' },
-  { value: 'Teachers', label: 'Teachers' },
+  { value: 'lecturers', label: 'lecturers' },
   { value: 'Students', label: 'Students' },
   { value: 'Parents', label: 'Parents' },
   { value: 'Staff', label: 'Staff' },

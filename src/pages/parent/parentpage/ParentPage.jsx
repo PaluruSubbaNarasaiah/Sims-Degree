@@ -65,7 +65,7 @@ const ParentPage = () => {
           { subject: 'Database Systems', score: 75, average: 70 } // Added a third subject
         ],
         events: [
-          { id: 1, title: "Parent-Faculty Meeting", date: "July 15, 2023", time: "4:00 PM" },
+          { id: 1, title: "Parent-lecturer Meeting", date: "July 15, 2023", time: "4:00 PM" },
           { id: 3, title: "Annual Tech Fest", date: "July 25, 2023", time: "9:00 AM" }
         ],
         payments: [
@@ -197,7 +197,7 @@ const ParentPage = () => {
   };
 
   // Handler for navigating to the Messages page
-  const handleMessageTeacher = () => {
+  const handleMessagelecturer = () => {
     navigate('messages'); // Navigate to messages page
   };
 
@@ -580,9 +580,9 @@ const ParentPage = () => {
                 <Button
                   variant="outline-primary"
                   className="text-start d-flex align-items-center rounded-pill px-4 py-3 fw-semibold"
-                  onClick={handleMessageTeacher} // Updated to navigate to /messages
+                  onClick={handleMessagelecturer} // Updated to navigate to /messages
                 >
-                  <FaComments className="me-3" size={20} /> Message Faculty
+                  <FaComments className="me-3" size={20} /> Message lecturer
                 </Button>
                 <Button
                   variant="outline-success"
