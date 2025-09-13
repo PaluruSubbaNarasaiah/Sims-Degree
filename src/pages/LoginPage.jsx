@@ -26,8 +26,8 @@ const LoginPage = ({ onClose, onForgotPasswordClick }) => {
         email: import.meta.env.VITE_ADMIN_EMAIL
       },
       {
-        username: import.meta.env.VITE_lecturer_USERNAME,
-        password: import.meta.env.VITE_lecturer_PASSWORD,
+        username: import.meta.env.VITE_LECTURER_USERNAME,
+        password: import.meta.env.VITE_LECTURER_PASSWORD,
         role: 'lecturer'
       },
       {
