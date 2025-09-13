@@ -33,7 +33,7 @@ const data = [
     },
 ];
 
-function lecturerGradeChart() {
+function LecturerGradeChart() {
     return (
         <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-200 h-full flex flex-col">
             <h2 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
@@ -60,4 +60,4 @@ function lecturerGradeChart() {
     );
 }
 
-export default lecturerGradeChart;
+export default LecturerGradeChart;

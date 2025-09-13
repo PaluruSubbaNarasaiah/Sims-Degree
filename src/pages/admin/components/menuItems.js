@@ -1,4 +1,4 @@
-import { FaSchool,FaChalkboardLecturer,FaUserGraduate,FaUsers,FaCreditCard,
+import { FaSchool,FaChalkboard,FaUserGraduate,FaUsers,FaCreditCard,
   FaLandmark,FaBook,FaClipboardList,FaRegCalendarAlt,FaClipboardCheck,FaDesktop,
   FaChartBar,FaUserCheck,FaCalendarCheck,FaComments,FaBullhorn,FaQuestionCircle,
   FaLaptopCode,FaCalendarAlt,FaAddressCard} from "react-icons/fa";
@@ -7,7 +7,7 @@ export const menuItems = [
   {
     items: [
       { icon: FaSchool, label: "Home", href: "/admin", visible: ["admin", "lecturer", "student", "parent"], keywords: ["dashboard", "overview"] },
-      { icon: FaChalkboardLecturer, label: "Lecturers", href: "/admin/lecturer", visible: ["admin", "lecturer"], keywords: ["lecturers", "staff", "educators"] },
+      { icon: FaChalkboard, label: "Lecturers", href: "/admin/lecturer", visible: ["admin", "lecturer"], keywords: ["lecturers", "staff", "educators"] },
       { icon: FaAddressCard, label: "Admissions", href: "/admin/admissions", visible: ["admin", "lecturer"], keywords: ["admission", "users"] },
       { icon: FaUserGraduate, label: "Students", href: "/admin/students", visible: ["admin", "lecturer"], keywords: ["pupils", "learners"] },
       { icon: FaUsers, label: "Parents", href: "/admin/parents", visible: ["admin", "lecturer"], keywords: ["guardians", "family"] },

@@ -3,7 +3,7 @@ import { role } from "../profile/ProfileContext"; // Assuming this context provi
 import { Link, useLocation } from "react-router-dom";
 import SIMSLogo from '../../../assets/sims-logo.png';
 import {
-  FaSchool, FaChalkboardLecturer, FaUserGraduate, FaUsers, FaJournalWhills,
+  FaSchool, FaChalkboard, FaUserGraduate, FaUsers, FaJournalWhills,
   FaClipboardList, FaRegCalendarAlt, FaClipboardCheck, FaDesktop, FaCalendarAlt, FaUserCheck,
   FaCalendarCheck, FaComments, FaBullhorn, FaQuestionCircle,
   FaTimes, FaBars // FaTimes and FaBars for toggle buttons
@@ -16,7 +16,7 @@ export const menuItems = [ // Export menuItems
       { icon: FaSchool, label: "Home", href: "/lecturer", visible: ["admin", "lecturer", "student", "parent"], keywords: ["dashboard", "overview"] }, // Added keywords
       { icon: FaUserGraduate, label: "Students", href: "/lecturer/students", visible: ["admin", "lecturer"], keywords: ["student list", "enrollment"] },
       { icon: FaUsers, label: "Parents", href: "/lecturer/parents", visible: ["admin", "lecturer"], keywords: ["parent list", "guardians"] },
-      { icon: FaChalkboardLecturer, label: "My Courses", href: "/lecturer/myclasses", visible: ["admin", "lecturer", "student", "parent"], keywords: ["course list", "timetable"] },
+      { icon: FaChalkboard, label: "My Courses", href: "/lecturer/myclasses", visible: ["admin", "lecturer", "student", "parent"], keywords: ["course list", "timetable"] },
       { icon: FaJournalWhills, label: "Diary", href: "/lecturer/diary", visible: ["admin", "lecturer", "student", "parent"], keywords: ["daily diary", "notes"] },
       { icon: FaClipboardList, label: "Exam Reports", href: "/lecturer/exams", visible: ["admin", "lecturer", "student", "parent"], keywords: ["grades", "results", "tests"] },
       { icon: FaRegCalendarAlt, label: "Schedules", href: "/lecturer/schedules", visible: ["admin", "lecturer", "student", "parent"], keywords: ["calendar", "timetable", "events"] },
